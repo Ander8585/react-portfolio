@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import PortfolioHeader from "./components/PortfolioHeader";
+import Home from "./components/Home";
+import About from "./components/About";
+import { useState } from "react";
+import Services from "./components/Services";
+import Portfolio from "./components/Portfolio";
+import Testimonials from "./components/Testimonials";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [actionCloseMenu, setActionCloseMenu] = useState(false);
+
+	return (
+		<div onClick={(e) => setActionCloseMenu(!actionCloseMenu)}>
+			<PortfolioHeader actionCloseMenu={actionCloseMenu} />
+			<Home />
+			<About />
+			<Services />
+			<Portfolio />
+			<Testimonials />
+		</div>
+	);
 }
 
 export default App;

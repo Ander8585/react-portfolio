@@ -1,0 +1,12 @@
+.link-btn {
+  --btn-color: rgba(255, 76, 41, 1);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	display: inline-block;
+	width: 200px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background-color: var(--btn-color);
+}

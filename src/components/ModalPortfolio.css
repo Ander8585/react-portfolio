@@ -1,0 +1,110 @@
+/* modal
+modal-content
+modal-close
+portfolio-modal**
+portfolio-info**
+portfolio-details** */
+
+/* *******Modal Window*************************** */
+
+.modal {
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 995;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 1;/* 0 */
+  pointer-events: auto;
+  transition: all 1s;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg {
+  --first-color: rgba(255, 76, 41, 1);
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+
+/* .modal[id|="work"]:target {
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+.portfolio-modal {
+  --white-color: #fff;
+  padding: 1rem;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
+  
+}
+
+.portfolio-modal h3 {
+  --first-color: rgba(255, 76, 41, 1);
+  --title-color: #333;
+  border-bottom: medium solid var(--first-color);
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  color: var(--title-color);
+}
+
+.portfolio-modal img {
+  width: 334px;
+  height: auto;
+}
+
+.portfolio-details {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-auto-rows: 2rem;
+}
+
+.portfolio-details b {
+  color: var(--first-color);
+}
+
+.portfolio-details > small:nth-child(2n+1) {
+  text-align: left;
+}
+
+.portfolio-details > small:nth-child(2n) {
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+
+  .portfolio-modal {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  .portfolio-info {
+    margin-left: 1rem;
+    align-self: center;
+  }
+
+  .portfolio-info p {
+    font-size: 1rem;
+  }
+  .portfolio-info small {
+    font-size: auto;
+  }
+}
+

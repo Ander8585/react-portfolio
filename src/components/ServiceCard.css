@@ -1,0 +1,17 @@
+.service-card {
+	margin: 1rem auto;
+	padding: 1rem;
+	text-align: center;
+}
+
+.service-card svg {
+  --first-color: rgba(255, 76, 41, 1);
+	fill: var(--first-color);
+	margin-bottom: 1.25rem;
+}
+
+.service-card h3 {
+  --title-color: #333;
+	color: var(--title-color);
+  
+}

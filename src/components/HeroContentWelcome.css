@@ -1,0 +1,7 @@
+.hero-image-title {
+  --title-color: #fff;
+  --hero-text-color: var(--title-color);
+	color: var(--hero-text-color);
+	font-size: 7.5vw;
+}
+

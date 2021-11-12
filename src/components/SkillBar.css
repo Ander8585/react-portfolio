@@ -1,0 +1,37 @@
+/* *******Progress Bar****** */
+
+progress {
+  --gray-color:#ccc;
+	width: 100%;
+	height: 1rem;
+	background-color: var(--gray-color);
+}
+
+/* para Chromium fondo de progress bar*/
+progress::-webkit-progress-bar {
+  --gray-color:#ccc;
+	background-color: var(--gray-color);
+}
+
+/* para Chromium value de progress bar*/
+progress::-webkit-progress-value {
+  --third-color: rgba(51, 71, 86, 1);
+	background-color: var(--third-color);
+}
+
+/* para Firefox value de progress bar*/
+progress::-moz-progress-bar {
+  --third-color: rgba(51, 71, 86, 1);
+	background-color: var(--third-color);
+}
+
+.progress {
+	margin: 1rem auto;
+}
+
+.progress > p {
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.85rem;
+}

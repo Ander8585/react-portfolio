@@ -1,13 +1,177 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------RESET------------------------------------------ */
+html {
+  --font: "Raleway", sans-serif;
+  --text-color: #222;
+  --link-color: #509ee3;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+	font-family: var(--font);
+	font-size: 16px;
 }
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	color: var(--text-color);
+}
+
+a {
+	color: var(--link-color);
+	transition: all 0.5s ease-out;
+}
+
+a:hover {
+	opacity: 0.75;
+}
+
+h1 {
+	margin: 0;
+	font-size: 2rem;
+}
+
+h2 {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+h3 {
+	margin: 0;
+	font-size: 1.25rem;
+}
+
+h4 {
+	margin: 0;
+	font-size: 1rem;
+}
+
+h5 {
+	margin: 0;
+	font-size: 0.85rem;
+}
+
+h6 {
+	margin: 0;
+	font-size: 0.7srem;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+p {
+	line-height: 1.6;
+}
+
+i {
+  font-size: inherit;
+}
+
+@layer components {
+
+  .header {
+    @apply fixed left-0 bottom-0 z-50 p-4 w-full h-header-height bg-second-color lg:sticky lg:top-0 lg:p-2 lg:h-14 ;
+  
+  }
+
+  .header > .my-container {
+    @apply flex justify-between items-center w-full;
+  }
+
+  /* ------------------------------------------------------------ */
+
+  .logo a {
+    @apply text-first-color font-bold text-3xl no-underline hover:text-white-color;
+  }
+
+  /* ------------------------------------------------------------ */
+
+  .menu {
+    @apply fixed inset-x-0 bottom-header-height w-full flex flex-col bg-second-color opacity-0 pointer-events-none transition-opacity lg:static lg:w-auto lg:flex-row lg:opacity-100 lg:pointer-events-auto;
+  } 
+
+  .menu.is-active {
+    @apply opacity-100 pointer-events-auto;
+  }
+
+  .menu a {
+    @apply p-4 text-base font-bold text-center no-underline text-first-color hover:text-white-color hover:bg-first-color lg:px-4 lg:py-0 lg:hover:bg-transparent;
+  }
+
+	.menu a:last-child {
+		@apply pr-0;
+	}
+
+
+  /* ---------------------------hamberger button-------------------------------- */
+  .menu-btn {
+    
+    @apply outline-menu-btn border-none bg-second-color cursor-pointer p-0.5 lg:hidden;
+    
+  }
+
+  .menu-btn svg {
+    
+    @apply fill-current text-first-color -mb-1 p-0;
+    
+  }
+
+  /* ------------------About------------------------------ */
+
+  .about {
+ 
+    @apply lg:grid lg:grid-cols-3 lg:justify-between lg:content-center lg:gap-4;
+		
+	}
+
+  .my-container {
+
+    @apply ml-auto mr-auto max-w-max-width-screen;
+
+  }
+
+  .section {
+
+    @apply py-8 px-4;
+    
+  }
+  
+  .section-title {
+    @apply  border-solid border-first-color border-l-0 border-r-0 my-8 mx-auto py-2 px-4 w-64 text-center text-title-color;
+  }
+  
+  .about > article {
+    @apply mb-8; 
+  }
+  
+  /*------------------Services-----------------------------*/
+
+  .services > .my-container {
+
+    @apply md:grid md:grid-cols-2 md:justify-between md:content-center lg:grid lg:grid-cols-3 lg:gap-4;
+	
+  }
+  
+  .services .section-title {
+		
+    @apply md:col-span-2 lg:col-span-3;
+    
+    /* grid-column: span 3; */
+
+  }
+
+
+}
+
+	
+

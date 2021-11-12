@@ -1,0 +1,50 @@
+@media screen and (min-width: 768px) {
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+ 
+  .portfolio > .my-container {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+  }
+
+  .portfolio-modal {
+    flex-direction: row;
+    max-width: 700px;
+  }
+
+  .portfolio-info {
+    margin-left: 1rem;
+    align-self: center;
+  }
+
+  .portfolio-info p {
+    font-size: 1rem;
+  }
+  .portfolio-info small {
+    font-size: auto;
+  }
+
+  .portfolio .section-title {
+		grid-column: span 2;
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+	
+  .contact-cards {
+    grid-template-columns: repeat(4, 24%);
+
+  }
+
+  .portfolio > .my-container {
+    grid-template-columns: repeat(3,51fr);
+  }
+
+  .portfolio .section-title {
+		grid-column: span 3;
+	}
+}
