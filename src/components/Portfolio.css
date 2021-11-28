@@ -41,7 +41,7 @@
   }
 
   .portfolio > .my-container {
-    grid-template-columns: repeat(3,51fr);
+    grid-template-columns: repeat(3,1fr);
   }
 
   .portfolio .section-title {

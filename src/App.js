@@ -5,6 +5,10 @@ import { useState } from "react";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Testimonials from "./components/Testimonials";
+//import Carousel from "./components/Carousel";
+import Contacts from './components/Contacts';
+import Footer from './components/Footer';
+
 
 function App() {
 	const [actionCloseMenu, setActionCloseMenu] = useState(false);
@@ -17,6 +21,8 @@ function App() {
 			<Services />
 			<Portfolio />
 			<Testimonials />
+      <Contacts />
+      <Footer />
 		</div>
 	);
 }

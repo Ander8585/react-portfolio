@@ -89,11 +89,6 @@
     grid-template-columns: repeat(2, 48%);
     justify-content: space-between;
   }
- 
-  .portfolio > .container {
-    display: grid;
-    grid-template-columns: repeat(2,50%);
-  }
 
   .portfolio-modal {
     flex-direction: row;
@@ -111,10 +106,6 @@
   .portfolio-info small {
     font-size: auto;
   }
-
-  .portfolio .section-title {
-		grid-column: span 2;
-	}
 
 }
 

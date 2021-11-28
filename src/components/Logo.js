@@ -1,4 +1,4 @@
-const Logo = () => {
+const Logo = ({ customizedWidth = "58", customizedHeight = "35" }) => {
 	return (
 		<div className="logo">
 			<a href="https://ander8585.github.io/General_portfolio/index.html">
@@ -6,8 +6,8 @@ const Logo = () => {
 					className="fill-current"
 					version="1.0"
 					xmlns="http://www.w3.org/2000/svg"
-					width="58"
-					height="35"
+					width={customizedWidth}
+					height={customizedHeight}
 					viewBox="0 0 700.000000 419.000000"
 					preserveAspectRatio="xMidYMid meet"
 				>
