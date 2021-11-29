@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeroImage from "./HeroImage";
 import Carousel from "./Carousel";
+import Slides2D from "./Slides2D";
 
 const Testimonials = () => {
 	const [vpWidth, setVpWidth] = useState(window.innerWidth);
@@ -12,7 +13,7 @@ const Testimonials = () => {
 	return (
 		<section id="testimonials" className="testimonials">
 			<HeroImage type="hero-image-testimonials">
-				{vpWidth > 1000 ? <Carousel /> : <h1>ESOOO</h1>}
+				{vpWidth > 1000 ? <Carousel /> : <Slides2D />}
 			</HeroImage>
 		</section>
 	);
