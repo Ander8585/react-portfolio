@@ -13,6 +13,7 @@ const Testimonials = () => {
 	return (
 		<section id="testimonials" className="testimonials">
 			<HeroImage type="hero-image-testimonials">
+				<h2 className="section-title">Mis Clientes dicen</h2>
 				{vpWidth > 1000 ? <Carousel /> : <Slides2D />}
 			</HeroImage>
 		</section>

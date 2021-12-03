@@ -1,5 +1,9 @@
 import React /* , { useState, useEffect } */ from "react";
 import "./Carousel.scss";
+import customer1 from "../assets/customer-1.jpg";
+import customer2 from "../assets/customer-2.jpg";
+import customer3 from "../assets/customer-3.jpg";
+import customer4 from "../assets/customer-4.jpg";
 
 const slides = [
 	{
@@ -7,28 +11,34 @@ const slides = [
 		subtitle: "Managing Director",
 		description:
 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
-		image: "http://localhost:5500/assets/customer-1.jpg",
+		image: customer1,
 	},
 	{
 		title: "Robert C. Martin",
 		subtitle: "Team Leader",
 		description:
 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
-		image: "http://localhost:5500/assets/customer-2.jpg",
+		image: customer2,
 	},
 	{
 		title: "Margaret Thatcher",
 		subtitle: "Purchase Director",
 		description:
 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
-		image: "http://localhost:5500/assets/customer-3.jpg",
+		image: customer3,
 	},
 	{
 		title: "Derek Lawrence",
 		subtitle: "Managing Director",
 		description:
 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
-		image: "http://localhost:5500/assets/customer-4.jpg",
+		image: customer4,
+	},
+	{
+		title: "Derek Lawrence",
+		subtitle: "Managing Director",
+		description: "YESSSSS!",
+		image: customer4,
 	},
 	/* {
 		title: "Five",
@@ -134,11 +144,11 @@ function Slide({ slide, offset }) {
 					}}
 				/>
 				<div className="slideContentInner">
-					<h2 className="slideTitle">{slide.title}</h2>
-					<h3 className="slideSubtitle">{slide.subtitle}</h3>
 					<blockquote className="slideDescription">
 						{slide.description}
 					</blockquote>
+					<h2 className="slideTitle">{slide.title}</h2>
+					<h6 className="slideSubtitle">{slide.subtitle}</h6>
 				</div>
 			</div>
 		</div>
@@ -161,7 +171,6 @@ const Carousel = () => {
 
 			{[...slides, ...slides, ...slides].map((slide, i) => {
 				let offset = slides.length + (state.slideIndex - i);
-				console.log(state.slideIndex, offset);
 				return <Slide slide={slide} offset={offset} key={i} />;
 			})}
 			<button onClick={() => dispatch({ type: "NEXT" })}>›</button>

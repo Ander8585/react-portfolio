@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 const Footer = () => {
 	return (
-		<footer class="footer">
+		<footer className="footer">
 			<small>
 				Sitio diseñado por
 				<Logo customizedWidth="40" customizedHeight="30" />
