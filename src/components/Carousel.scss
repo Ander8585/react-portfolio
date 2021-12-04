@@ -97,8 +97,8 @@ body, .App {
 }
 
 .slideContent {
-  width: 65vh;
-  height: 73vh;
+  width: 25rem;
+  height: 30rem;
   /* background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; */
@@ -117,6 +117,7 @@ body, .App {
     rotateY(calc(-45deg * var(--dir)));
 
   .slideImg {
+    --img-dimension: 10rem;
     background-position: center center;
     background-size: 100% 100%;
     transform-style: preserve-3d;
@@ -126,16 +127,14 @@ body, .App {
     border-radius: 50%;
     position: absolute;
     top: 2rem;
-    left: calc(50% - 7.5vw);
+    left: calc(50% - var(--img-dimension)/2);
 
-    width: 15vw;
-    height: 15vw;
+    width: var(--img-dimension);
+    height: var(--img-dimension);
     opacity: 0;
   }
 
 }
-
-
 
 .slideContentInner {
   transform-style: preserve-3d;
