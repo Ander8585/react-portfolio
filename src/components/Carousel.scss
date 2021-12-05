@@ -111,6 +111,7 @@ body, .App {
   align-content: flex-end;
   align-items: center;
   padding: 2rem;
+  padding-bottom: 3rem;
 
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)))
