@@ -10,7 +10,7 @@ const slides = [
 	{
 		title: "Shirley Torres",
 		subtitle: "Managing Director",
-		description: "Lorem",
+		description: "HOLAAAAAA",
 		image: customer1,
 	},
 	{
