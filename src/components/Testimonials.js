@@ -1,13 +1,13 @@
 import React from "react";
 import HeroImage from "./HeroImage";
-import customer1 from "../assets/customer-1.jpg";
-import customer2 from "../assets/customer-2.jpg";
-import customer3 from "../assets/customer-3.jpg";
-import customer4 from "../assets/customer-4.jpg";
+import customer5 from "../assets/customer-5.jpg";
+import customer6 from "../assets/customer-6.jpg";
+import customer7 from "../assets/customer-7.jpg";
+
 import ResponsiveCarousel2D3D from "./ResponsiveCarousel2D3D";
 
 const slides = [
-	{
+	/* 	{
 		title: "Shirley Torres",
 		subtitle: "Managing Director",
 		description: "HOLAAAAAA",
@@ -19,26 +19,27 @@ const slides = [
 		description:
 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
 		image: customer2,
+	}, */
+	{
+		title: "Yanquiel Jauregui",
+		subtitle: "Jefe de Mantenimiento (Industria Eleka)",
+		description:
+			"Es una persona muy inteligente y trabajar con el ha sido muy importante para nuestra empresa. Es muy capaz y tiene muy buen trato con todas las personas.",
+		image: customer6,
 	},
 	{
-		title: "Margaret Thatcher",
-		subtitle: "Purchase Director",
+		title: "Raudel Cuiman",
+		subtitle: "Profesor e Investigador (Universidad CUJAE)",
 		description:
-			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
-		image: customer3,
+			"Es un excelente profesional y un gran compañero de equipo. Propone siempre soluciones interesantes y le encanta aprender.",
+		image: customer5,
 	},
 	{
 		title: "Derek Lawrence",
-		subtitle: "Managing Director",
+		subtitle: "Managing Director (Insepra Ltd.)",
 		description:
-			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
-		image: customer4,
-	},
-	{
-		title: "Derek Lawrence",
-		subtitle: "Managing Director",
-		description: "YESSSSS!",
-		image: customer4,
+			"Es un gran trabajador. Es un ingeniero muy creativo y eficiente en buscar soluciones a los problemas mas retadores",
+		image: customer7,
 	},
 	/* {
 		title: "Five",
