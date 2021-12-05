@@ -24,21 +24,21 @@ const slides = [
 		title: "Yanquiel Jauregui",
 		subtitle: "Jefe de Mantenimiento (Industria Eleka)",
 		description:
-			"Es una persona muy inteligente y trabajar con el ha sido muy importante para nuestra empresa. Es muy capaz y tiene muy buen trato con todas las personas.",
+			"Es una persona muy inteligente y trabajar con él ha sido muy importante para nuestra planta. Es muy capaz y tiene muy buen trato con todo el personal de la empresa.",
 		image: customer6,
 	},
 	{
 		title: "Raudel Cuiman",
 		subtitle: "Profesor e Investigador (Universidad CUJAE)",
 		description:
-			"Es un excelente profesional y un gran compañero de equipo. Propone siempre soluciones interesantes y le encanta aprender.",
+			"Es un excelente profesional y un gran compañero de equipo. Propone siempre ideas interesantes y aprende rápidamente.",
 		image: customer5,
 	},
 	{
 		title: "Derek Lawrence",
 		subtitle: "Managing Director (Insepra Ltd.)",
 		description:
-			"Es un gran trabajador. Es un ingeniero muy creativo y eficiente en buscar soluciones a los problemas mas retadores",
+			"Es un gran trabajador. Un ingeniero muy creativo y eficiente en buscar soluciones a los problemas más retadores. Tenerlo como trabajador marca la diferencia",
 		image: customer7,
 	},
 	/* {
@@ -54,7 +54,7 @@ const Testimonials = () => {
 	return (
 		<section id="testimonials" className="testimonials">
 			<HeroImage type="hero-image-testimonials">
-				<h2 className="section-title">Mis Clientes dicen</h2>
+				<h2 className="section-title">Testimonios</h2>
 				<ResponsiveCarousel2D3D slides={slides} />
 			</HeroImage>
 		</section>

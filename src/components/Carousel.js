@@ -97,7 +97,7 @@ function Slide({ slide, offset }) {
 				/>
 				<div className="slideContentInner">
 					<blockquote className="slideDescription">
-						<b>{slide.description}</b>
+						{slide.description}
 					</blockquote>
 					<h2 className="slideTitle">{slide.title}</h2>
 					<h6 className="slideSubtitle">{slide.subtitle}</h6>
