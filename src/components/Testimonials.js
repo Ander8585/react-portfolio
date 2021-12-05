@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import HeroImage from "./HeroImage";
-import Carousel from "./Carousel";
-import Slides2D from "./Slides2D";
 import customer1 from "../assets/customer-1.jpg";
 import customer2 from "../assets/customer-2.jpg";
 import customer3 from "../assets/customer-3.jpg";

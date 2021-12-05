@@ -46,7 +46,6 @@ const Slides2D = ({ data = [] }) => {
 						<h6>{el.subtitle}</h6>
 					</li>
 				))}
-				{console.log(data.length)}
 			</ul>
 			<aside className="slides-nav2d">
 				{data.map((el, index) => (

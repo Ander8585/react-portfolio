@@ -2,14 +2,12 @@
 
 
 
-## Other tools used in this project
-
-In the project directory, you can run:
+## Other tools used in this project:
 
 ### `- SASS`
 ### `- Tailwind CSS`
 ### `- React Router`
-
+### `- Github Pages deployment`
 
 
 
