@@ -16,7 +16,7 @@ import img5 from "../assets/portfolio-5.jpg";
 import img6 from "../assets/portfolio-6.jpg";
 import ModalPortfolio from "./ModalPortfolio";
 
-const data = [
+/* const data = [
 	{
 		href: "work-1",
 		img: img1,
@@ -65,10 +65,11 @@ const data = [
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
 	},
-];
+]; */
 
 const modalData = [
 	{
+		href: "work-1",
 		img: img1,
 		imgAlt: "Trabajo-1",
 		title: "Nombre del proyecto 1",
@@ -80,6 +81,7 @@ const modalData = [
 		link: "http://index.html",
 	},
 	{
+		href: "work-2",
 		img: img2,
 		imgAlt: "Trabajo-2",
 		title: "Nombre del proyecto 2",
@@ -91,6 +93,7 @@ const modalData = [
 		link: "http://index.html",
 	},
 	{
+		href: "work-3",
 		img: img3,
 		imgAlt: "Trabajo-3",
 		title: "Nombre del proyecto 3",
@@ -102,6 +105,7 @@ const modalData = [
 		link: "http://index.html",
 	},
 	{
+		href: "work-4",
 		img: img4,
 		imgAlt: "Trabajo-4",
 		title: "Nombre del proyecto 4",
@@ -113,6 +117,7 @@ const modalData = [
 		link: "http://index.html",
 	},
 	{
+		href: "work-5",
 		img: img5,
 		imgAlt: "Trabajo-5",
 		title: "Nombre del proyecto 5",
@@ -124,6 +129,7 @@ const modalData = [
 		link: "http://index.html",
 	},
 	{
+		href: "work-6",
 		img: img6,
 		imgAlt: "Trabajo-6",
 		title: "Nombre del proyecto 6",
@@ -134,6 +140,7 @@ const modalData = [
 		type: "Sitio Web",
 		link: "http://index.html",
 	},
+	
 ];
 
 const Portfolio = () => {
@@ -142,21 +149,31 @@ const Portfolio = () => {
 			<section id="portfolio" className="portfolio section">
 				<div className="my-container">
 					<h2 className="section-title">Mis Trabajos</h2>
-					<PortfolioCard data={data[0]} />
+					{modalData.map((el, index) => (
+						<PortfolioCard data={el} key={index} />
+					))}
+					{/* <PortfolioCard data={data[0]} />
 					<PortfolioCard data={data[1]} />
 					<PortfolioCard data={data[2]} />
 					<PortfolioCard data={data[3]} />
 					<PortfolioCard data={data[4]} />
-					<PortfolioCard data={data[5]} />
+					<PortfolioCard data={data[5]} /> */}
 				</div>
 			</section>
 			<Routes>
-				<Route path="work-1" element={<ModalPortfolio data={modalData[0]} />} />
+				{modalData.map((el, index) => (
+					<Route
+						path={el.href}
+						key={index}
+						element={<ModalPortfolio data={el} key={"m-" + index} />}
+					/>
+				))}
+				{/* <Route path="work-1" element={<ModalPortfolio data={modalData[0]} />} />
 				<Route path="work-2" element={<ModalPortfolio data={modalData[1]} />} />
 				<Route path="work-3" element={<ModalPortfolio data={modalData[2]} />} />
 				<Route path="work-4" element={<ModalPortfolio data={modalData[3]} />} />
 				<Route path="work-5" element={<ModalPortfolio data={modalData[4]} />} />
-				<Route path="work-6" element={<ModalPortfolio data={modalData[5]} />} />
+				<Route path="work-6" element={<ModalPortfolio data={modalData[5]} />} /> */}
 			</Routes>
 		</HashRouter>
 	);
