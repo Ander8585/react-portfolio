@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.c65c5e61.chunk.css",
-    "main.js": "/react-portfolio/static/js/main.6faa6487.chunk.js",
-    "main.js.map": "/react-portfolio/static/js/main.6faa6487.chunk.js.map",
+    "main.css": "/react-portfolio/static/css/main.f3cb5741.chunk.css",
+    "main.js": "/react-portfolio/static/js/main.5145f705.chunk.js",
+    "main.js.map": "/react-portfolio/static/js/main.5145f705.chunk.js.map",
     "runtime-main.js": "/react-portfolio/static/js/runtime-main.0e2c5bc3.js",
     "runtime-main.js.map": "/react-portfolio/static/js/runtime-main.0e2c5bc3.js.map",
     "static/js/2.4a9ebb97.chunk.js": "/react-portfolio/static/js/2.4a9ebb97.chunk.js",
@@ -10,24 +10,24 @@
     "static/js/3.2ea6a4fb.chunk.js": "/react-portfolio/static/js/3.2ea6a4fb.chunk.js",
     "static/js/3.2ea6a4fb.chunk.js.map": "/react-portfolio/static/js/3.2ea6a4fb.chunk.js.map",
     "index.html": "/react-portfolio/index.html",
-    "static/css/main.c65c5e61.chunk.css.map": "/react-portfolio/static/css/main.c65c5e61.chunk.css.map",
+    "static/css/main.f3cb5741.chunk.css.map": "/react-portfolio/static/css/main.f3cb5741.chunk.css.map",
     "static/js/2.4a9ebb97.chunk.js.LICENSE.txt": "/react-portfolio/static/js/2.4a9ebb97.chunk.js.LICENSE.txt",
     "static/media/anderTorres-low.2d516471.jpg": "/react-portfolio/static/media/anderTorres-low.2d516471.jpg",
     "static/media/customer-5.23df8589.jpg": "/react-portfolio/static/media/customer-5.23df8589.jpg",
     "static/media/customer-6.e38dd5be.jpg": "/react-portfolio/static/media/customer-6.e38dd5be.jpg",
     "static/media/customer-7.359b5f66.jpg": "/react-portfolio/static/media/customer-7.359b5f66.jpg",
     "static/media/HeroImage.css": "/react-portfolio/static/media/home-hero-image.662f3c78.jpg",
-    "static/media/portfolio-1.7c57eedd.jpg": "/react-portfolio/static/media/portfolio-1.7c57eedd.jpg",
-    "static/media/portfolio-2.736d6f92.jpg": "/react-portfolio/static/media/portfolio-2.736d6f92.jpg",
     "static/media/portfolio-3.4d735200.jpg": "/react-portfolio/static/media/portfolio-3.4d735200.jpg",
     "static/media/portfolio-4.2991a243.jpg": "/react-portfolio/static/media/portfolio-4.2991a243.jpg",
     "static/media/portfolio-5.d6948a25.jpg": "/react-portfolio/static/media/portfolio-5.d6948a25.jpg",
-    "static/media/portfolio-6.0b4c8034.jpg": "/react-portfolio/static/media/portfolio-6.0b4c8034.jpg"
+    "static/media/portfolio-6.0b4c8034.jpg": "/react-portfolio/static/media/portfolio-6.0b4c8034.jpg",
+    "static/media/portfolioPic.54ba5f2c.jpg": "/react-portfolio/static/media/portfolioPic.54ba5f2c.jpg",
+    "static/media/token.82e00231.jpg": "/react-portfolio/static/media/token.82e00231.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.0e2c5bc3.js",
     "static/js/2.4a9ebb97.chunk.js",
-    "static/css/main.c65c5e61.chunk.css",
-    "static/js/main.6faa6487.chunk.js"
+    "static/css/main.f3cb5741.chunk.css",
+    "static/js/main.5145f705.chunk.js"
   ]
 }
