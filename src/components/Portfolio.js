@@ -96,13 +96,13 @@ const portfolioData = [
 		href: "work-3",
 		img: img3,
 		imgAlt: "Trabajo-3",
-		title: "Nombre del proyecto 3",
+		title: "Consultoría Sector Industrial",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
-		clientName: "Cliente 1",
+			"Conjunto de trabajos técnicos para la industria cubana específicamente en el área de empaquetado, marcaje, etiquetado y trazabilidad. Este trabajo se ha realizado asociado a Insepra Limited, proveedera de marcas de gran prestigio internacional como Domino printing, Intrex, entre otras. Se han desarrollado varios soluciones para empresas como Papas&Co, ICTSA, Prodal, Eleka, Nescor, Nestle Coralac, Inmunoensayo, entre otras",
+		clientName: "Varias empresas de manufactura",
 		date: "10/10/21",
-		type: "Sitio Web",
-		link: "http://index.html",
+		type: "Trabajo Tecnico Industrial",
+		link: "https://insepra.com/our-team/",
 	},
 	{
 		href: "work-4",
