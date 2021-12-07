@@ -147,6 +147,10 @@ i {
     
   }
   
+  [id] {
+    scroll-margin-top: 4ex;
+  }
+
   .section-title {
     @apply  border-solid border-first-color border-l-0 border-r-0 my-8 mx-auto py-2 px-4 w-64 text-center text-title-color;
   }

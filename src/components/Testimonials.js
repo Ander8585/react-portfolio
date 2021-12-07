@@ -52,7 +52,7 @@ const slides = [
 
 const Testimonials = () => {
 	return (
-		<section id="testimonials" className="testimonials">
+		<section className="testimonials" id="testimonials">
 			<HeroImage type="hero-image-testimonials">
 				<h2 className="section-title">Testimonios</h2>
 				<ResponsiveCarousel2D3D slides={slides} />

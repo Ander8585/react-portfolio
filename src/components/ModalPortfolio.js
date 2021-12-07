@@ -6,7 +6,7 @@ const ModalPortfolio = ({ data }) => {
 	return (
 		<article className="modal" id="work-1">
 			<div className="modal-content">
-				<Link to="/" className="modal-close">
+				<Link to="/#" className="modal-close">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="24"
@@ -39,7 +39,7 @@ const ModalPortfolio = ({ data }) => {
 							</small>
 							<small>
 								<a href={data.link} target="_blank" rel="noreferrer">
-									{data.link}
+									{data.link ? `${data.link.substr(0, 20)}...` : ""}
 								</a>
 							</small>
 						</aside>

@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 import "./Portfolio.css";
 import PortfolioCard from "./PortfolioCard";
-import img1 from "../assets/portfolio-1.jpg";
-import img2 from "../assets/portfolio-2.jpg";
+import img1 from "../assets/token.jpg";
+import img2 from "../assets/portfolioPic.jpg";
 import img3 from "../assets/portfolio-3.jpg";
 import img4 from "../assets/portfolio-4.jpg";
 import img5 from "../assets/portfolio-5.jpg";
@@ -67,30 +67,30 @@ import ModalPortfolio from "./ModalPortfolio";
 	},
 ]; */
 
-const modalData = [
+const portfolioData = [
 	{
 		href: "work-1",
 		img: img1,
-		imgAlt: "Trabajo-1",
-		title: "Nombre del proyecto 1",
+		imgAlt: "TokenP",
+		title: "Llave Hardware",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
-		clientName: "Cliente 1",
-		date: "10/10/21",
-		type: "Sitio Web",
-		link: "http://index.html",
+			"Token Criptográfico que permite firmar digitalmente documentos y cifrar información en ficheros. Tiene implementado diferentes algoritmos de seguridad como RSA, ECDSA, AES y GOST. Cuenta con protección ante ataques de Side Channel y su principal objetivo es que las llaves privadas siempre permanezcan almacenadas de manera segura en el dispositivo y nunca se copien hacia el ordenador.",
+		clientName: "Datys",
+		date: "01/10/14",
+		type: "Diseño hardware y Criptografía",
+		link: "",
 	},
 	{
 		href: "work-2",
 		img: img2,
-		imgAlt: "Trabajo-2",
-		title: "Nombre del proyecto 2",
+		imgAlt: "Portfolio responsive",
+		title: "Portafolio Web",
 		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
-		clientName: "Cliente 1",
-		date: "10/10/21",
+			"Portafolio Web SPA diseñado con el objetivo de mostrar información sobre mis habilidades profesionales de manera más accesible y organizada. Se utilizaron herramientas Frontend y de diseño UI/UX como Figma, React, TailwindCSS, SASS y se utilizó la API FormSubmit para procesar los formularios. Se programó de manera tal que sea sencillo mantener y actualizar la página",
+		clientName: "Ander Torres",
+		date: "07/12/21",
 		type: "Sitio Web",
-		link: "http://index.html",
+		link: "http://ander8585.github.io/react-portfolio",
 	},
 	{
 		href: "work-3",
@@ -140,7 +140,6 @@ const modalData = [
 		type: "Sitio Web",
 		link: "http://index.html",
 	},
-	
 ];
 
 const Portfolio = () => {
@@ -149,31 +148,19 @@ const Portfolio = () => {
 			<section id="portfolio" className="portfolio section">
 				<div className="my-container">
 					<h2 className="section-title">Mis Trabajos</h2>
-					{modalData.map((el, index) => (
+					{portfolioData.map((el, index) => (
 						<PortfolioCard data={el} key={index} />
 					))}
-					{/* <PortfolioCard data={data[0]} />
-					<PortfolioCard data={data[1]} />
-					<PortfolioCard data={data[2]} />
-					<PortfolioCard data={data[3]} />
-					<PortfolioCard data={data[4]} />
-					<PortfolioCard data={data[5]} /> */}
 				</div>
 			</section>
 			<Routes>
-				{modalData.map((el, index) => (
+				{portfolioData.map((el, index) => (
 					<Route
 						path={el.href}
 						key={index}
 						element={<ModalPortfolio data={el} key={"m-" + index} />}
 					/>
 				))}
-				{/* <Route path="work-1" element={<ModalPortfolio data={modalData[0]} />} />
-				<Route path="work-2" element={<ModalPortfolio data={modalData[1]} />} />
-				<Route path="work-3" element={<ModalPortfolio data={modalData[2]} />} />
-				<Route path="work-4" element={<ModalPortfolio data={modalData[3]} />} />
-				<Route path="work-5" element={<ModalPortfolio data={modalData[4]} />} />
-				<Route path="work-6" element={<ModalPortfolio data={modalData[5]} />} /> */}
 			</Routes>
 		</HashRouter>
 	);
