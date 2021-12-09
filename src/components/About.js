@@ -2,6 +2,45 @@ import React from "react";
 import profilePic from "../assets/anderTorres-low.jpg";
 import LinkBtn from "./LinkBtn";
 import SkillBar from "./SkillBar";
+import "./About.css";
+
+const skillList = [
+	{
+		description: (
+			<>
+				{" "}
+				Desarrollo <i>Web Frontend</i>
+			</>
+		),
+		percent: "30",
+	},
+	{
+		description: (
+			<>
+				{" "}
+				Desarrollo <i>Web Backend</i>
+			</>
+		),
+		percent: "5",
+	},
+	{
+		description: <> Automatización Industrial</>,
+		percent: "70",
+	},
+	{
+		description: (
+			<>
+				{" "}
+				Desarrollo <i>Hardware</i>
+			</>
+		),
+		percent: "90",
+	},
+	{
+		description: <> Criptografía y Seguridad</>,
+		percent: "75",
+	},
+];
 
 const About = () => {
 	return (
@@ -36,19 +75,20 @@ const About = () => {
 			<article className="flex flex-col">
 				<img className="filter grayscale" src={profilePic} alt="Ander Torres" />
 			</article>
-			<article>
+			<article className="skills">
 				<h2 className="text-center lg:text-left">Mis Habilidades</h2>
-				<SkillBar value="30">
-					Desarrollo <i>Web Frontend</i>
-				</SkillBar>
-				<SkillBar value="5">
-					Desarrollo <i>Web Backend</i>
-				</SkillBar>
-				<SkillBar value="70">Automatización Industrial</SkillBar>
-				<SkillBar value="90">
-					Desarrollo <i>Hardware</i>
-				</SkillBar>
-				<SkillBar value="75">Criptografía y Seguridad</SkillBar>
+				{skillList.map((el, index) => (
+					<SkillBar key={index} value={el.percent} children={el.description} />
+				))}
+				{/* <nav className="sub-skills">
+					<details>
+						<summary>Frontend Skills</summary>
+						<SkillBar value={"50"} children={"HTML"} />
+						<SkillBar value={"50"} children={"CSS"} />
+						<SkillBar value={"50"} children={"JavaScript"} />
+						<SkillBar value={"50"} children={"React"} />
+					</details>
+				</nav> */}
 			</article>
 		</section>
 	);

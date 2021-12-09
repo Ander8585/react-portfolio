@@ -10,7 +10,7 @@ import "./Portfolio.css";
 import PortfolioCard from "./PortfolioCard";
 import img1 from "../assets/token.jpg";
 import img2 from "../assets/portfolioPic.jpg";
-import img3 from "../assets/portfolio-3.jpg";
+import img3 from "../assets/intrex.jpg";
 import img4 from "../assets/portfolio-4.jpg";
 import img5 from "../assets/portfolio-5.jpg";
 import img6 from "../assets/portfolio-6.jpg";
@@ -101,7 +101,7 @@ const portfolioData = [
 			"Conjunto de trabajos técnicos para la industria cubana específicamente en el área de empaquetado, marcaje, etiquetado y trazabilidad. Este trabajo se ha realizado asociado a Insepra Limited, proveedera de marcas de gran prestigio internacional como Domino printing, Intrex, entre otras. Se han desarrollado varios soluciones para empresas como Papas&Co, ICTSA, Prodal, Eleka, Nescor, Nestle Coralac, Inmunoensayo, entre otras",
 		clientName: "Varias empresas de manufactura",
 		date: "10/10/21",
-		type: "Trabajo Tecnico Industrial",
+		type: "Trabajo Técnico Industrial",
 		link: "https://insepra.com/our-team/",
 	},
 	{
