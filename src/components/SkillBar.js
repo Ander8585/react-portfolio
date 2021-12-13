@@ -1,15 +1,39 @@
 import React from "react";
 import "./SkillBar.css";
 
-const SkillBar = ({ children = "", value = "0" }) => {
+const SkillBar = ({ data = null }) => {
 	return (
-		<div className="progress">
-			<p>
-				<b>{children}</b>
-				<b>{`${value}%`}</b>
-			</p>
-			<progress value={value} min="0" max="100"></progress>
-		</div>
+		data && (
+			<div className="progress">
+				<p>
+					<b>
+						{data.subData ? (
+							<>
+								<nav className="sub-progress">
+									<details>
+										<summary>
+											{data.logo && data.logo}
+											{data.title}
+										</summary>
+										{data.subData &&
+											data.subData.map((el, index) => (
+												<SkillBar key={index} data={el} />
+											))}
+									</details>
+								</nav>
+							</>
+						) : (
+							<>
+								{data.logo && data.logo}
+								{data.title}
+							</>
+						)}
+					</b>
+					<b>{`${data.value}%`}</b>
+				</p>
+				<progress value={data.value} min="0" max="100"></progress>
+			</div>
+		)
 	);
 };
 

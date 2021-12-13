@@ -11,9 +11,9 @@ import PortfolioCard from "./PortfolioCard";
 import img1 from "../assets/token.jpg";
 import img2 from "../assets/portfolioPic.jpg";
 import img3 from "../assets/intrex.jpg";
-import img4 from "../assets/portfolio-4.jpg";
+/* import img4 from "../assets/portfolio-4.jpg";
 import img5 from "../assets/portfolio-5.jpg";
-import img6 from "../assets/portfolio-6.jpg";
+import img6 from "../assets/portfolio-6.jpg"; */
 import ModalPortfolio from "./ModalPortfolio";
 
 /* const data = [
@@ -104,7 +104,7 @@ const portfolioData = [
 		type: "Trabajo Técnico Industrial",
 		link: "https://insepra.com/our-team/",
 	},
-	{
+	/* 	{
 		href: "work-4",
 		img: img4,
 		imgAlt: "Trabajo-4",
@@ -139,7 +139,7 @@ const portfolioData = [
 		date: "10/10/21",
 		type: "Sitio Web",
 		link: "http://index.html",
-	},
+	}, */
 ];
 
 const Portfolio = () => {

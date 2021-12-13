@@ -78,6 +78,10 @@ i {
   font-size: inherit;
 }
 
+small {
+  font-size: 0.7rem;
+}
+
 @layer components {
 
   .header {
