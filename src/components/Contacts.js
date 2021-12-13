@@ -162,9 +162,10 @@ const Contacts = () => {
 		})
 			.then((res) => (res.ok ? res.json() : Promise.reject(res)))
 			.then((json) => {
-				console.log(json);
+				//console.log(json);
 				setIsModal(true);
-				e.target.reset();
+				setForm({}); //reset all input handled by the state variable (form)
+				e.target.reset(); //reset the textArea cause it's not handled by the state variable (form)
 			})
 			.catch((err) => {
 				console.log(err);
