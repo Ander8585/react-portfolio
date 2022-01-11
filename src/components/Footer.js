@@ -6,7 +6,7 @@ const Footer = () => {
 	return (
 		<footer className="footer">
 			<small>
-				Sitio diseñado por
+				Sitio diseñado por Ander
 				<Logo customizedWidth="40" customizedHeight="30" />
 			</small>
 		</footer>
