@@ -51,6 +51,14 @@ const welcomeMessage = (
 		<br />a mi sitio
 	</>
 );
+
+//---------Configuracion de HeroImage. Seccion Home----
+const heroImageDataHome = {
+	attachment: "fixed",
+	opacityColor: "rgba(0, 0, 0, 0.5)",
+	type: "hero-image-home",
+};
+
 //************************ABOUT**********************************
 //---------Lista de habilidades ordenadas en arbol. Seccion About
 const skillList = [
@@ -752,6 +760,13 @@ const slides = [
 	}, */
 ];
 
+//---------Configuracion de HeroImage. Seccion Testimonials----
+const heroImageDataTestimonials = {
+	attachment: "scroll",
+	opacityColor: "rgba(255, 255, 255, 0.5)",
+	type: "hero-image-testimonials",
+};
+
 //************************CONTACTS*****************************
 //---------Datos de contactos. Seccion Contacts----------------
 const contactInfo = {
@@ -842,6 +857,10 @@ const contactInfo = {
 		},
 	},
 };
+
+//************************FOOTER*******************************
+const footerMessage = <>Sitio diseñado por Ander</>;
+
 export {
 	portfolioData,
 	skillList,
@@ -852,4 +871,7 @@ export {
 	menuItems,
 	logoSvg,
 	welcomeMessage,
+	heroImageDataTestimonials,
+	heroImageDataHome,
+	footerMessage
 };

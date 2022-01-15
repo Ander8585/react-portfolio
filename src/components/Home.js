@@ -1,12 +1,12 @@
 import React from "react";
 import HeroImage from "./HeroImage";
 import HeroContentWelcome from "./HeroContentWelcome";
-import { welcomeMessage } from "../data/dataInfo";
+import { heroImageDataHome, welcomeMessage } from "../data/dataInfo";
 
 const Home = () => {
 	return (
 		<section id="home" className="home">
-			<HeroImage type="hero-image-home">
+			<HeroImage heroImageData={heroImageDataHome}>
 				<HeroContentWelcome>{welcomeMessage}</HeroContentWelcome>
 			</HeroImage>
 		</section>
