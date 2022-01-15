@@ -21,5 +21,11 @@
 	"start_url": "https://ander8585.github.io/react-portfolio",
 	"display": "standalone",
 	"theme_color": "#000000",
-	"background_color": "#ffffff"
+	"background_color": "#ffffff",
+	"related_applications": [
+		{
+			"platform": "github",
+			"url": "https://ander8585.github.io/react-portfolio"
+		}
+	]
 }
