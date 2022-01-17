@@ -8,7 +8,7 @@ const Logo = ({
 }) => {
 	return (
 		<div className="logo">
-			<a href="https://ander8585.github.io/General_portfolio/index.html">
+			<a href="https://ander8585.github.io/react-portfolio">
 				{logoSvg(customizedWidth, customizedHeight, color)}
 				{/* <svg
 					viewBox="0 0 404 286"
