@@ -401,7 +401,7 @@ const skillListES = [
 			{
 				title: (
 					<>
-						SQL <small>{"(en aprendizaje)"}</small>
+						MySQL <small>{"(en aprendizaje)"}</small>
 					</>
 				),
 				logo: (
@@ -1274,7 +1274,7 @@ const skillListEN = [
 			{
 				title: (
 					<>
-						SQL <small>{"(learning)"}</small>
+						MySQL <small>{"(learning)"}</small>
 					</>
 				),
 				logo: (
