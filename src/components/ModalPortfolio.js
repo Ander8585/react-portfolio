@@ -1,6 +1,7 @@
 import React from "react";
 import "./ModalPortfolio.css";
 import { Link } from "react-router-dom";
+import { modalTextInfo } from "../data/dataInfo";
 
 const ModalPortfolio = ({ data }) => {
 	return (
@@ -23,19 +24,19 @@ const ModalPortfolio = ({ data }) => {
 						<p>{data.description}</p>
 						<aside className="portfolio-details">
 							<small>
-								<b>CLIENTE:</b>
+								<b>{modalTextInfo.textClient}</b>
 							</small>
 							<small>{data.clientName}</small>
 							<small>
-								<b>FECHA:</b>
+								<b>{modalTextInfo.textDate}</b>
 							</small>
 							<small>{data.date}</small>
 							<small>
-								<b>TIPO:</b>
+								<b>{modalTextInfo.textType}</b>
 							</small>
 							<small>{data.type}</small>
 							<small>
-								<b>ENLACE:</b>
+								<b>{modalTextInfo.textLink}</b>
 							</small>
 							<small>
 								<a href={data.link} target="_blank" rel="noreferrer">

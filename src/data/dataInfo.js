@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 //----------Imagenes para portfolioData. Seccion Portafolio------
 import img1 from "../assets/token.jpg";
 import img2 from "../assets/portfolioPic.jpg";
@@ -12,16 +13,8 @@ import customer5 from "../assets/customer-5.jpg";
 import customer6 from "../assets/customer-6.jpg";
 import customer7 from "../assets/customer-7.jpg";
 //---------------------------------------------------------------
-//**********************PORTFOLIOHEADER**************************
-//---------Items del Menu principal. Seccion Portfolioheader-----
-const menuItems = [
-	{ href: "#home", title: "Inicio" },
-	{ href: "#about", title: "Acerca" },
-	{ href: "#services", title: "Servicios" },
-	{ href: "#portfolio", title: "Portafolio" },
-	{ href: "#testimonials", title: "Testimonios" },
-	{ href: "#contacts", title: "Contacto" },
-];
+
+//*******************LOGO***Y****HEROIMAGE***********************
 //----------Funcion que genera el logo en svg. Cambiar el tag svg
 //----------de adentro si se quiere cambiar el logo del autor----
 const logoSvg = (customizedWidth, customizedHeight, color) => (
@@ -43,25 +36,47 @@ const logoSvg = (customizedWidth, customizedHeight, color) => (
 		/>
 	</svg>
 );
-//************************HOME***********************************
-//---------Mensaje de bienvenida---------------------------------
-const welcomeMessage = (
-	<>
-		Bienvenid@s
-		<br />a mi sitio
-	</>
-);
-
-//---------Configuracion de HeroImage. Seccion Home----
+//---------Configuracion de HeroImage. Seccion Home--------------
 const heroImageDataHome = {
 	attachment: "fixed",
 	opacityColor: "rgba(0, 0, 0, 0.5)",
 	type: "hero-image-home",
 };
+//---------Configuracion de HeroImage. Seccion Testimonials------
+const heroImageDataTestimonials = {
+	attachment: "scroll",
+	opacityColor: "rgba(255, 255, 255, 0.5)",
+	type: "hero-image-testimonials",
+};
+
+//===============================================================
+//==========================ESPAÑOL==============================
+//===============================================================
+//**********************PORTFOLIOHEADER**************************
+//---------Items del Menu principal. Seccion Portfolioheader-----
+const menuItemsES = [
+	{ href: "#home", title: "Inicio" },
+	{ href: "#about", title: "Acerca" },
+	{ href: "#services", title: "Servicios" },
+	{ href: "#portfolio", title: "Portafolio" },
+	{ href: "#testimonials", title: "Testimonios" },
+	{ href: "#contacts", title: "Contacto" },
+];
+
+//************************HOME***********************************
+//---------Mensaje de bienvenida---------------------------------
+const welcomeMessageES = (
+	<>
+		Bienvenid@s
+		<br />a mi sitio
+	</>
+);
+//---------Boton CTA de la hero image del Home-------------------
+const welcomeButtonTextES = <>CONTÁCTAME</>;
 
 //************************ABOUT**********************************
 //---------Lista de habilidades ordenadas en arbol. Seccion About
-const skillList = [
+const skillListES = [
 	{
 		title: (
 			<>
@@ -98,7 +113,7 @@ const skillList = [
 						focusable="false"
 						data-prefix="fab"
 						data-icon="css3-alt"
-						class="svg-inline--fa fa-css3-alt fa-w-12"
+						className="svg-inline--fa fa-css3-alt fa-w-12"
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 384 512"
@@ -119,7 +134,7 @@ const skillList = [
 								focusable="false"
 								data-prefix="fab"
 								data-icon="css3-alt"
-								class="svg-inline--fa fa-css3-alt fa-w-12"
+								className="svg-inline--fa fa-css3-alt fa-w-12"
 								role="img"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 384 512"
@@ -141,7 +156,7 @@ const skillList = [
 								focusable="false"
 								data-prefix="fab"
 								data-icon="sass"
-								class="svg-inline--fa fa-sass fa-w-20"
+								className="svg-inline--fa fa-sass fa-w-20"
 								role="img"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 640 512"
@@ -186,7 +201,7 @@ const skillList = [
 						focusable="false"
 						data-prefix="fab"
 						data-icon="js-square"
-						class="svg-inline--fa fa-js-square fa-w-14"
+						className="svg-inline--fa fa-js-square fa-w-14"
 						role="img"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 448 512"
@@ -207,7 +222,7 @@ const skillList = [
 								focusable="false"
 								data-prefix="fab"
 								data-icon="js-square"
-								class="svg-inline--fa fa-js-square fa-w-14"
+								className="svg-inline--fa fa-js-square fa-w-14"
 								role="img"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 448 512"
@@ -229,7 +244,7 @@ const skillList = [
 								focusable="false"
 								data-prefix="fab"
 								data-icon="react"
-								class="svg-inline--fa fa-react fa-w-16"
+								className="svg-inline--fa fa-react fa-w-16"
 								role="img"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 512 512"
@@ -258,8 +273,8 @@ const skillList = [
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<path
-							fill-rule="evenodd"
-							clip-rule="evenodd"
+							fillRule="evenodd"
+							clipRule="evenodd"
 							d="M103.5 1.99993C51 8.79844 11.5001 49.5 3.00013 93.5C-16.1248 192.5 74.5 257.027 128 239C148.158 232.208 162 207 149 181C145 158 166.5 158 186 158H203.5C233 152.5 242.667 128.5 234.5 93.4999C222.133 40.5001 173 -6.99998 103.5 1.99993ZM12.1996 98.5087C20.5069 56.5063 54.4563 22.6416 96.5858 14.4192C166.011 0.898726 226.789 53.4547 227.001 120.252C226.958 135.383 214.667 147.928 199.494 147.928H165.714C144.098 147.928 130.111 170.392 139.902 189.634C147.913 205.358 139.351 225.787 121.889 228.5C68.0191 236.849 -3.48237 177.766 12.1996 98.5087ZM37.1213 134.365C37.1213 141.867 43.1822 147.928 50.6842 147.928C58.1861 147.928 64.247 141.867 64.247 134.365C64.247 126.863 58.1861 120.803 50.6842 120.803C43.1822 120.803 37.1213 126.863 37.1213 134.365ZM50.6842 80.1141C50.6842 87.616 56.745 93.6769 64.247 93.6769C71.7489 93.6769 77.8098 87.616 77.8098 80.1141C77.8098 72.6121 71.7489 66.5513 64.247 66.5513C56.745 66.5513 50.6842 72.6121 50.6842 80.1141ZM104.935 52.9884C104.935 60.4904 110.996 66.5513 118.498 66.5513C126 66.5513 132.061 60.4904 132.061 52.9884C132.061 45.4865 126 39.4256 118.498 39.4256C110.996 39.4256 104.935 45.4865 104.935 52.9884ZM159.187 80.1141C159.187 87.616 165.248 93.6769 172.75 93.6769C180.251 93.6769 186.312 87.616 186.312 80.1141C186.312 72.6121 180.251 66.5513 172.75 66.5513C165.248 66.5513 159.187 72.6121 159.187 80.1141Z"
 							fill="currentColor"
 						/>
@@ -304,7 +319,7 @@ const skillList = [
 								focusable="false"
 								data-prefix="fab"
 								data-icon="figma"
-								class="svg-inline--fa fa-figma fa-w-12"
+								className="svg-inline--fa fa-figma fa-w-12"
 								role="img"
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 384 512"
@@ -482,7 +497,7 @@ const skillList = [
 	},
 ];
 //---------Información personal para la Seccion About------------
-const personalInfo = {
+const personalInfoES = {
 	name: "Ander Torres",
 	professionalTitle: "Ingeniero en Automática y Máster en Sistemas Digitales",
 	details: (
@@ -507,93 +522,13 @@ const personalInfo = {
 	),
 	profilePic,
 	altProfilePic: "Ander Torres",
+	buttonCV: "DESCARGA MI CV",
+	skillsTitle: "Mis Habilidades",
 };
 
-//************************PORTFOLIO****************************
-//---------Datos de trabajos realizados. Seccion Portafolio------
-const portfolioData = [
-	{
-		href: "work-1",
-		img: img1,
-		imgAlt: "TokenP",
-		title: "Llave Hardware",
-		description:
-			"Token Criptográfico que permite firmar digitalmente documentos y cifrar información en ficheros. Tiene implementado diferentes algoritmos de seguridad como RSA, ECDSA, AES y GOST. Cuenta con protección ante ataques de Side Channel y su principal objetivo es que las llaves privadas siempre permanezcan almacenadas de manera segura en el dispositivo y nunca se copien hacia el ordenador.",
-		clientName: "Datys",
-		date: "01/10/14",
-		type: "Diseño hardware y Criptografía",
-		link: "",
-	},
-	{
-		href: "work-2",
-		img: img2,
-		imgAlt: "Portfolio responsive",
-		title: "Portafolio Web",
-		description:
-			"Portafolio Web SPA diseñado con el objetivo de mostrar información sobre mis habilidades profesionales de manera más accesible y organizada. Se utilizaron herramientas Frontend y de diseño UI/UX como Figma, React, TailwindCSS, SASS y se utilizó la API FormSubmit para procesar los formularios. Se programó de manera tal que sea sencillo mantener y actualizar la página",
-		clientName: "Ander Torres",
-		date: (
-			<>
-				14/01/22<b> (Last update)</b>
-			</>
-		),
-		type: "Sitio Web",
-		link: "https://ander8585.github.io/react-portfolio",
-	},
-	{
-		href: "work-3",
-		img: img3,
-		imgAlt: "Etiquetadora",
-		title: "Consultoría Sector Industrial",
-		description:
-			"Conjunto de trabajos técnicos para la industria cubana específicamente en el área de empaquetado, marcaje, etiquetado y trazabilidad. Este trabajo se ha realizado asociado a Insepra Limited, proveedera de marcas de gran prestigio internacional como Domino printing, Intrex, entre otras. Se han desarrollado varios soluciones para empresas como Papas&Co, ICTSA, Prodal, Eleka, Nescor, Nestle Coralac, Inmunoensayo, entre otras",
-		clientName: "Varias empresas de manufactura",
-		date: "10/10/21",
-		type: "Trabajo Técnico Industrial",
-		link: "https://insepra.com/our-team/",
-	},
-	{
-		href: "work-4",
-		img: img4,
-		imgAlt: "React Firebase Chat",
-		title: "React Firebase Chat",
-		description:
-			"Sala de chat desarrollada en React y utilizando los servicios de Firebase funcionando como Backend para almacenar y compartir los mensajes de los usuarios así como para autenticarse. Se utilizaron herramientas Figma y Photoshop para el diseño de la interfaz y dos componentes de terceros para la comunicación con el SDK de Firebase desde los hooks de React y para recrear un menu contextual. El resto de programó desde cero en React. Para acceder desde Cuba es necesario usar vpn",
-		clientName: "Ander Torres",
-		date: "5/01/22",
-		type: "Aplicación Web",
-		link: "https://ander8585.github.io/react-firebase-chat",
-	},
-	/*
-	{
-		href: "work-5",
-		img: img5,
-		imgAlt: "Trabajo-5",
-		title: "Nombre del proyecto 5",
-		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
-		clientName: "Cliente 1",
-		date: "10/10/21",
-		type: "Sitio Web",
-		link: "http://index.html",
-	},
-	{
-		href: "work-6",
-		img: img6,
-		imgAlt: "Trabajo-6",
-		title: "Nombre del proyecto 6",
-		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
-		clientName: "Cliente 1",
-		date: "10/10/21",
-		type: "Sitio Web",
-		link: "http://index.html",
-	}, */
-];
-
-//************************SERVICES*****************************
+//************************SERVICES*******************************
 //---------Datos de Servicios ofrecidos. Seccion Services--------
-const serviceCardList = [
+const serviceCardListES = [
 	{
 		logo: (
 			<svg
@@ -718,10 +653,104 @@ const serviceCardList = [
 		description: <p>Aplicaciones de escritorio para Windows.</p>,
 	},
 ];
+//---------Titulo de la Seccion----------------------------------
+const serviceSectionTitleES = "¿Qué te ofrezco?";
 
-//************************TESTIMONIALS*************************
-//---------Datos para el componente ResponsiveCarousel2D3D-----
-const slides = [
+//************************PORTFOLIO******************************
+//---------Datos de trabajos realizados. Seccion Portafolio------
+const portfolioDataES = [
+	{
+		href: "work-1",
+		img: img1,
+		imgAlt: "TokenP",
+		title: "Llave Hardware",
+		description:
+			"Token Criptográfico que permite firmar digitalmente documentos y cifrar información en ficheros. Tiene implementado diferentes algoritmos de seguridad como RSA, ECDSA, AES y GOST. Cuenta con protección ante ataques de Side Channel y su principal objetivo es que las llaves privadas siempre permanezcan almacenadas de manera segura en el dispositivo y nunca se copien hacia el ordenador.",
+		clientName: "Datys",
+		date: "01/10/14",
+		type: "Diseño hardware y Criptografía",
+		link: "",
+	},
+	{
+		href: "work-2",
+		img: img2,
+		imgAlt: "Portfolio responsive",
+		title: "Portafolio Web",
+		description:
+			"Portafolio Web SPA diseñado con el objetivo de mostrar información sobre mis habilidades profesionales de manera más accesible y organizada. Se utilizaron herramientas Frontend y de diseño UI/UX como Figma, React, TailwindCSS, SASS y se utilizó la API FormSubmit para procesar los formularios. Se programó de manera tal que sea sencillo mantener y actualizar la página",
+		clientName: "Ander Torres",
+		date: (
+			<>
+				14/01/22<b> (Last update)</b>
+			</>
+		),
+		type: "Sitio Web",
+		link: "https://ander8585.github.io/react-portfolio",
+	},
+	{
+		href: "work-3",
+		img: img3,
+		imgAlt: "Etiquetadora",
+		title: "Consultoría Sector Industrial",
+		description:
+			"Conjunto de trabajos técnicos para la industria cubana específicamente en el área de empaquetado, marcaje, etiquetado y trazabilidad. Este trabajo se ha realizado asociado a Insepra Limited, proveedera de marcas de gran prestigio internacional como Domino printing, Intrex, entre otras. Se han desarrollado varios soluciones para empresas como Papas&Co, ICTSA, Prodal, Eleka, Nescor, Nestle Coralac, Inmunoensayo, entre otras",
+		clientName: "Varias empresas de manufactura",
+		date: "10/10/21",
+		type: "Trabajo Técnico Industrial",
+		link: "https://insepra.com/our-team/",
+	},
+	{
+		href: "work-4",
+		img: img4,
+		imgAlt: "React Firebase Chat",
+		title: "React Firebase Chat",
+		description:
+			"Sala de chat desarrollada en React y utilizando los servicios de Firebase funcionando como Backend para almacenar y compartir los mensajes de los usuarios así como para autenticarse. Se utilizaron herramientas Figma y Photoshop para el diseño de la interfaz y dos componentes de terceros para la comunicación con el SDK de Firebase desde los hooks de React y para recrear un menu contextual. El resto de programó desde cero en React. Para acceder desde Cuba es necesario usar vpn",
+		clientName: "Ander Torres",
+		date: "5/01/22",
+		type: "Aplicación Web",
+		link: "https://ander8585.github.io/react-firebase-chat",
+	},
+	/*
+	{
+		href: "work-5",
+		img: img5,
+		imgAlt: "Trabajo-5",
+		title: "Nombre del proyecto 5",
+		description:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
+		clientName: "Cliente 1",
+		date: "10/10/21",
+		type: "Sitio Web",
+		link: "http://index.html",
+	},
+	{
+		href: "work-6",
+		img: img6,
+		imgAlt: "Trabajo-6",
+		title: "Nombre del proyecto 6",
+		description:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
+		clientName: "Cliente 1",
+		date: "10/10/21",
+		type: "Sitio Web",
+		link: "http://index.html",
+	}, */
+];
+//--------Textos de los modales del portafolio. Seccion Portfolio
+//--------Componente ModalPortfolioCard--------------------------
+const modalTextInfoES = {
+	textClient: "CLIENTE:",
+	textDate: "FECHA:",
+	textType: "TIPO:",
+	textLink: "ENLACE:",
+};
+//---------Titulo de la Seccion----------------------------------
+const portfolioSectionTitleES = "Mis Trabajos";
+
+//************************TESTIMONIALS***************************
+//---------Datos para el componente ResponsiveCarousel2D3D-------
+const slidesES = [
 	{
 		title: "Yanquiel Jauregui",
 		subtitle: "Jefe de Mantenimiento (Industria Eleka)",
@@ -759,20 +788,19 @@ const slides = [
 			"https://images.unsplash.com/photo-1579130781921-76e18892b57b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
 	}, */
 ];
+//---------Titulo de la Seccion----------------------------------
+const testimonialsSectionTitleES = "Testimonios";
 
-//---------Configuracion de HeroImage. Seccion Testimonials----
-const heroImageDataTestimonials = {
-	attachment: "scroll",
-	opacityColor: "rgba(255, 255, 255, 0.5)",
-	type: "hero-image-testimonials",
-};
-
-//************************CONTACTS*****************************
-//---------Datos de contactos. Seccion Contacts----------------
-const contactInfo = {
+//************************CONTACTS*******************************
+//---------Datos de contactos. Seccion Contacts------------------
+const contactInfoES = {
+	localAddressTitle: "UBICACIÓN",
 	localAddress: <>La Habana, Cuba</>,
+	telTitle: "TELÉFONO",
 	tel: "+5358343813",
+	emailTitle: "EMAIL",
 	email: "ander8585@gmail.com",
+	socialMediaTitle: "REDES SOCIALES",
 	socialMedia: {
 		facebook: {
 			href: "https://www.facebook.com/ander.torreslopez/",
@@ -857,9 +885,1083 @@ const contactInfo = {
 		},
 	},
 };
+//---------Datos de texto del formulario. Seccion Contacts-------
+const formTextInfoES = {
+	namePHolderText: "Ingresa tu Nombre*",
+	nameTitleErrorText: "Nombre solo acepta letras y espacios en blanco",
+	emailPHolderText: "Ingresa tu correo*",
+	emailTitleErrorText: "Introduzca un Email correcto",
+	commentsPHolderText: "Déjame tus comentarios",
+	submitButtonText: "ENVIAR MENSAJE",
+	answerModalText: (
+		<>
+			¡Muchas Gracias!
+			<br />
+			Por tus comentarios
+		</>
+	),
+	answerErrorModalText: (
+		<>
+			¡Ha ocurrido
+			<br />
+			un Error!
+		</>
+	),
+};
+//---------Titulo de la Seccion----------------------------------
+const contactsSectionTitleES = "Contactos";
 
-//************************FOOTER*******************************
-const footerMessage = <>Sitio diseñado por Ander</>;
+//************************FOOTER*********************************
+const footerMessageES = <>Sitio diseñado por Ander</>;
+
+//===============================================================
+//==========================ENGLISH==============================
+//===============================================================
+//**********************PORTFOLIOHEADER**************************
+//---------Items del Menu principal. Seccion Portfolioheader-----
+const menuItemsEN = [
+	{ href: "#home", title: "Home" },
+	{ href: "#about", title: "About" },
+	{ href: "#services", title: "Services" },
+	{ href: "#portfolio", title: "Portfolio" },
+	{ href: "#testimonials", title: "Testimonials" },
+	{ href: "#contacts", title: "Contacts" },
+];
+
+//************************HOME***********************************
+//---------Mensaje de bienvenida---------------------------------
+const welcomeMessageEN = (
+	<>
+		Welcome to
+		<br />
+		my page
+	</>
+);
+//---------Boton CTA de la hero image del Home-------------------
+const welcomeButtonTextEN = <>CONTACT ME</>;
+
+//************************ABOUT**********************************
+//---------Lista de habilidades ordenadas en arbol. Seccion About
+const skillListEN = [
+	{
+		title: (
+			<>
+				<i>Frontend</i> Web Development
+			</>
+		),
+		logo: null,
+		value: "60",
+		subData: [
+			{
+				title: <>HTML</>,
+				logo: (
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 384 512"
+					>
+						<path
+							fill="currentColor"
+							d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"
+						/>
+					</svg>
+				),
+				value: "80",
+				subData: null,
+			},
+			{
+				title: <>CSS</>,
+				logo: (
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fab"
+						data-icon="css3-alt"
+						className="svg-inline--fa fa-css3-alt fa-w-12"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 384 512"
+					>
+						<path
+							fill="currentColor"
+							d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2.1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"
+						/>
+					</svg>
+				),
+				value: "70",
+				subData: [
+					{
+						title: <>CSS</>,
+						logo: (
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								data-prefix="fab"
+								data-icon="css3-alt"
+								className="svg-inline--fa fa-css3-alt fa-w-12"
+								role="img"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 384 512"
+							>
+								<path
+									fill="currentColor"
+									d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2.1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"
+								/>
+							</svg>
+						),
+						value: "80",
+						subData: null,
+					},
+					{
+						title: <>SASS</>,
+						logo: (
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								data-prefix="fab"
+								data-icon="sass"
+								className="svg-inline--fa fa-sass fa-w-20"
+								role="img"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 640 512"
+							>
+								<path
+									fill="currentColor"
+									d="M301.84 378.92c-.3.6-.6 1.08 0 0zm249.13-87a131.16 131.16 0 0 0-58 13.5c-5.9-11.9-12-22.3-13-30.1-1.2-9.1-2.5-14.5-1.1-25.3s7.7-26.1 7.6-27.2-1.4-6.6-14.3-6.7-24 2.5-25.29 5.9a122.83 122.83 0 0 0-5.3 19.1c-2.3 11.7-25.79 53.5-39.09 75.3-4.4-8.5-8.1-16-8.9-22-1.2-9.1-2.5-14.5-1.1-25.3s7.7-26.1 7.6-27.2-1.4-6.6-14.29-6.7-24 2.5-25.3 5.9-2.7 11.4-5.3 19.1-33.89 77.3-42.08 95.4c-4.2 9.2-7.8 16.6-10.4 21.6-.4.8-.7 1.3-.9 1.7.3-.5.5-1 .5-.8-2.2 4.3-3.5 6.7-3.5 6.7v.1c-1.7 3.2-3.6 6.1-4.5 6.1-.6 0-1.9-8.4.3-19.9 4.7-24.2 15.8-61.8 15.7-63.1-.1-.7 2.1-7.2-7.3-10.7-9.1-3.3-12.4 2.2-13.2 2.2s-1.4 2-1.4 2 10.1-42.4-19.39-42.4c-18.4 0-44 20.2-56.58 38.5-7.9 4.3-25 13.6-43 23.5-6.9 3.8-14 7.7-20.7 11.4-.5-.5-.9-1-1.4-1.5-35.79-38.2-101.87-65.2-99.07-116.5 1-18.7 7.5-67.8 127.07-127.4 98-48.8 176.35-35.4 189.84-5.6 19.4 42.5-41.89 121.6-143.66 133-38.79 4.3-59.18-10.7-64.28-16.3-5.3-5.9-6.1-6.2-8.1-5.1-3.3 1.8-1.2 7 0 10.1 3 7.9 15.5 21.9 36.79 28.9 18.7 6.1 64.18 9.5 119.17-11.8 61.78-23.8 109.87-90.1 95.77-145.6C386.52 18.32 293-.18 204.57 31.22c-52.69 18.7-109.67 48.1-150.66 86.4-48.69 45.6-56.48 85.3-53.28 101.9 11.39 58.9 92.57 97.3 125.06 125.7-1.6.9-3.1 1.7-4.5 2.5-16.29 8.1-78.18 40.5-93.67 74.7-17.5 38.8 2.9 66.6 16.29 70.4 41.79 11.6 84.58-9.3 107.57-43.6s20.2-79.1 9.6-99.5c-.1-.3-.3-.5-.4-.8 4.2-2.5 8.5-5 12.8-7.5 8.29-4.9 16.39-9.4 23.49-13.3-4 10.8-6.9 23.8-8.4 42.6-1.8 22 7.3 50.5 19.1 61.7 5.2 4.9 11.49 5 15.39 5 13.8 0 20-11.4 26.89-25 8.5-16.6 16-35.9 16-35.9s-9.4 52.2 16.3 52.2c9.39 0 18.79-12.1 23-18.3v.1s.2-.4.7-1.2c1-1.5 1.5-2.4 1.5-2.4v-.3c3.8-6.5 12.1-21.4 24.59-46 16.2-31.8 31.69-71.5 31.69-71.5a201.24 201.24 0 0 0 6.2 25.8c2.8 9.5 8.7 19.9 13.4 30-3.8 5.2-6.1 8.2-6.1 8.2a.31.31 0 0 0 .1.2c-3 4-6.4 8.3-9.9 12.5-12.79 15.2-28 32.6-30 37.6-2.4 5.9-1.8 10.3 2.8 13.7 3.4 2.6 9.4 3 15.69 2.5 11.5-.8 19.6-3.6 23.5-5.4a82.2 82.2 0 0 0 20.19-10.6c12.5-9.2 20.1-22.4 19.4-39.8-.4-9.6-3.5-19.2-7.3-28.2 1.1-1.6 2.3-3.3 3.4-5C434.8 301.72 450.1 270 450.1 270a201.24 201.24 0 0 0 6.2 25.8c2.4 8.1 7.09 17 11.39 25.7-18.59 15.1-30.09 32.6-34.09 44.1-7.4 21.3-1.6 30.9 9.3 33.1 4.9 1 11.9-1.3 17.1-3.5a79.46 79.46 0 0 0 21.59-11.1c12.5-9.2 24.59-22.1 23.79-39.6-.3-7.9-2.5-15.8-5.4-23.4 15.7-6.6 36.09-10.2 62.09-7.2 55.68 6.5 66.58 41.3 64.48 55.8s-13.8 22.6-17.7 25-5.1 3.3-4.8 5.1c.5 2.6 2.3 2.5 5.6 1.9 4.6-.8 29.19-11.8 30.29-38.7 1.6-34-31.09-71.4-89-71.1zm-429.18 144.7c-18.39 20.1-44.19 27.7-55.28 21.3C54.61 451 59.31 421.42 82 400c13.8-13 31.59-25 43.39-32.4 2.7-1.6 6.6-4 11.4-6.9.8-.5 1.2-.7 1.2-.7.9-.6 1.9-1.1 2.9-1.7 8.29 30.4.3 57.2-19.1 78.3zm134.36-91.4c-6.4 15.7-19.89 55.7-28.09 53.6-7-1.8-11.3-32.3-1.4-62.3 5-15.1 15.6-33.1 21.9-40.1 10.09-11.3 21.19-14.9 23.79-10.4 3.5 5.9-12.2 49.4-16.2 59.2zm111 53c-2.7 1.4-5.2 2.3-6.4 1.6-.9-.5 1.1-2.4 1.1-2.4s13.9-14.9 19.4-21.7c3.2-4 6.9-8.7 10.89-13.9 0 .5.1 1 .1 1.6-.13 17.9-17.32 30-25.12 34.8zm85.58-19.5c-2-1.4-1.7-6.1 5-20.7 2.6-5.7 8.59-15.3 19-24.5a36.18 36.18 0 0 1 1.9 10.8c-.1 22.5-16.2 30.9-25.89 34.4z"
+								/>
+							</svg>
+						),
+						value: "50",
+						subData: null,
+					},
+					{
+						title: <>TailwindCSS</>,
+						logo: (
+							<svg
+								viewBox="0 0 1000 1000"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M489.5 226.499C328 231.632 280 346.999 269 409.499C283.333 386.332 328.5 335.5 395 335.5C472.5 335.5 531.5 422 567.5 449C611.237 481.803 699.123 525.115 814.5 490C906.5 462 949.167 364.332 958.5 317.999C914 378.499 846.5 414.838 763 371.999C705.5 342.499 662.5 221 489.5 226.499Z"
+									fill="currentColor"
+								/>
+								<path
+									d="M261 500.999C99.5 506.132 51.5 621.499 40.5 683.999C54.8333 660.832 100 610 166.5 610C244 610 303 696.5 339 723.5C382.737 756.303 470.623 799.615 586 764.5C678 736.5 720.667 638.832 730 592.499C685.5 652.999 618 689.338 534.5 646.499C477 616.999 434 495.5 261 500.999Z"
+									fill="currentColor"
+								/>
+							</svg>
+						),
+						value: "60",
+						subData: null,
+					},
+				],
+			},
+			{
+				title: <>JavaScript</>,
+				logo: (
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						data-prefix="fab"
+						data-icon="js-square"
+						className="svg-inline--fa fa-js-square fa-w-14"
+						role="img"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 448 512"
+					>
+						<path
+							fill="currentColor"
+							d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"
+						/>
+					</svg>
+				),
+				value: "70",
+				subData: [
+					{
+						title: <>Vanilla JS</>,
+						logo: (
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								data-prefix="fab"
+								data-icon="js-square"
+								className="svg-inline--fa fa-js-square fa-w-14"
+								role="img"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 448 512"
+							>
+								<path
+									fill="currentColor"
+									d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"
+								/>
+							</svg>
+						),
+						value: "80",
+						subData: null,
+					},
+					{
+						title: <>React JS</>,
+						logo: (
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								data-prefix="fab"
+								data-icon="react"
+								className="svg-inline--fa fa-react fa-w-16"
+								role="img"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 512 512"
+							>
+								<path
+									fill="currentColor"
+									d="M418.2 177.2c-5.4-1.8-10.8-3.5-16.2-5.1.9-3.7 1.7-7.4 2.5-11.1 12.3-59.6 4.2-107.5-23.1-123.3-26.3-15.1-69.2.6-112.6 38.4-4.3 3.7-8.5 7.6-12.5 11.5-2.7-2.6-5.5-5.2-8.3-7.7-45.5-40.4-91.1-57.4-118.4-41.5-26.2 15.2-34 60.3-23 116.7 1.1 5.6 2.3 11.1 3.7 16.7-6.4 1.8-12.7 3.8-18.6 5.9C38.3 196.2 0 225.4 0 255.6c0 31.2 40.8 62.5 96.3 81.5 4.5 1.5 9 3 13.6 4.3-1.5 6-2.8 11.9-4 18-10.5 55.5-2.3 99.5 23.9 114.6 27 15.6 72.4-.4 116.6-39.1 3.5-3.1 7-6.3 10.5-9.7 4.4 4.3 9 8.4 13.6 12.4 42.8 36.8 85.1 51.7 111.2 36.6 27-15.6 35.8-62.9 24.4-120.5-.9-4.4-1.9-8.9-3-13.5 3.2-.9 6.3-1.9 9.4-2.9 57.7-19.1 99.5-50 99.5-81.7 0-30.3-39.4-59.7-93.8-78.4zM282.9 92.3c37.2-32.4 71.9-45.1 87.7-36 16.9 9.7 23.4 48.9 12.8 100.4-.7 3.4-1.4 6.7-2.3 10-22.2-5-44.7-8.6-67.3-10.6-13-18.6-27.2-36.4-42.6-53.1 3.9-3.7 7.7-7.2 11.7-10.7zM167.2 307.5c5.1 8.7 10.3 17.4 15.8 25.9-15.6-1.7-31.1-4.2-46.4-7.5 4.4-14.4 9.9-29.3 16.3-44.5 4.6 8.8 9.3 17.5 14.3 26.1zm-30.3-120.3c14.4-3.2 29.7-5.8 45.6-7.8-5.3 8.3-10.5 16.8-15.4 25.4-4.9 8.5-9.7 17.2-14.2 26-6.3-14.9-11.6-29.5-16-43.6zm27.4 68.9c6.6-13.8 13.8-27.3 21.4-40.6s15.8-26.2 24.4-38.9c15-1.1 30.3-1.7 45.9-1.7s31 .6 45.9 1.7c8.5 12.6 16.6 25.5 24.3 38.7s14.9 26.7 21.7 40.4c-6.7 13.8-13.9 27.4-21.6 40.8-7.6 13.3-15.7 26.2-24.2 39-14.9 1.1-30.4 1.6-46.1 1.6s-30.9-.5-45.6-1.4c-8.7-12.7-16.9-25.7-24.6-39s-14.8-26.8-21.5-40.6zm180.6 51.2c5.1-8.8 9.9-17.7 14.6-26.7 6.4 14.5 12 29.2 16.9 44.3-15.5 3.5-31.2 6.2-47 8 5.4-8.4 10.5-17 15.5-25.6zm14.4-76.5c-4.7-8.8-9.5-17.6-14.5-26.2-4.9-8.5-10-16.9-15.3-25.2 16.1 2 31.5 4.7 45.9 8-4.6 14.8-10 29.2-16.1 43.4zM256.2 118.3c10.5 11.4 20.4 23.4 29.6 35.8-19.8-.9-39.7-.9-59.5 0 9.8-12.9 19.9-24.9 29.9-35.8zM140.2 57c16.8-9.8 54.1 4.2 93.4 39 2.5 2.2 5 4.6 7.6 7-15.5 16.7-29.8 34.5-42.9 53.1-22.6 2-45 5.5-67.2 10.4-1.3-5.1-2.4-10.3-3.5-15.5-9.4-48.4-3.2-84.9 12.6-94zm-24.5 263.6c-4.2-1.2-8.3-2.5-12.4-3.9-21.3-6.7-45.5-17.3-63-31.2-10.1-7-16.9-17.8-18.8-29.9 0-18.3 31.6-41.7 77.2-57.6 5.7-2 11.5-3.8 17.3-5.5 6.8 21.7 15 43 24.5 63.6-9.6 20.9-17.9 42.5-24.8 64.5zm116.6 98c-16.5 15.1-35.6 27.1-56.4 35.3-11.1 5.3-23.9 5.8-35.3 1.3-15.9-9.2-22.5-44.5-13.5-92 1.1-5.6 2.3-11.2 3.7-16.7 22.4 4.8 45 8.1 67.9 9.8 13.2 18.7 27.7 36.6 43.2 53.4-3.2 3.1-6.4 6.1-9.6 8.9zm24.5-24.3c-10.2-11-20.4-23.2-30.3-36.3 9.6.4 19.5.6 29.5.6 10.3 0 20.4-.2 30.4-.7-9.2 12.7-19.1 24.8-29.6 36.4zm130.7 30c-.9 12.2-6.9 23.6-16.5 31.3-15.9 9.2-49.8-2.8-86.4-34.2-4.2-3.6-8.4-7.5-12.7-11.5 15.3-16.9 29.4-34.8 42.2-53.6 22.9-1.9 45.7-5.4 68.2-10.5 1 4.1 1.9 8.2 2.7 12.2 4.9 21.6 5.7 44.1 2.5 66.3zm18.2-107.5c-2.8.9-5.6 1.8-8.5 2.6-7-21.8-15.6-43.1-25.5-63.8 9.6-20.4 17.7-41.4 24.5-62.9 5.2 1.5 10.2 3.1 15 4.7 46.6 16 79.3 39.8 79.3 58 0 19.6-34.9 44.9-84.8 61.4zm-149.7-15c25.3 0 45.8-20.5 45.8-45.8s-20.5-45.8-45.8-45.8c-25.3 0-45.8 20.5-45.8 45.8s20.5 45.8 45.8 45.8z"
+								/>
+							</svg>
+						),
+						value: "60",
+						subData: null,
+					},
+				],
+			},
+			{
+				title: (
+					<>
+						<i>UX/UI</i> Tools
+					</>
+				),
+				logo: (
+					<svg
+						viewBox="0 0 238 243"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							fillRule="evenodd"
+							clipRule="evenodd"
+							d="M103.5 1.99993C51 8.79844 11.5001 49.5 3.00013 93.5C-16.1248 192.5 74.5 257.027 128 239C148.158 232.208 162 207 149 181C145 158 166.5 158 186 158H203.5C233 152.5 242.667 128.5 234.5 93.4999C222.133 40.5001 173 -6.99998 103.5 1.99993ZM12.1996 98.5087C20.5069 56.5063 54.4563 22.6416 96.5858 14.4192C166.011 0.898726 226.789 53.4547 227.001 120.252C226.958 135.383 214.667 147.928 199.494 147.928H165.714C144.098 147.928 130.111 170.392 139.902 189.634C147.913 205.358 139.351 225.787 121.889 228.5C68.0191 236.849 -3.48237 177.766 12.1996 98.5087ZM37.1213 134.365C37.1213 141.867 43.1822 147.928 50.6842 147.928C58.1861 147.928 64.247 141.867 64.247 134.365C64.247 126.863 58.1861 120.803 50.6842 120.803C43.1822 120.803 37.1213 126.863 37.1213 134.365ZM50.6842 80.1141C50.6842 87.616 56.745 93.6769 64.247 93.6769C71.7489 93.6769 77.8098 87.616 77.8098 80.1141C77.8098 72.6121 71.7489 66.5513 64.247 66.5513C56.745 66.5513 50.6842 72.6121 50.6842 80.1141ZM104.935 52.9884C104.935 60.4904 110.996 66.5513 118.498 66.5513C126 66.5513 132.061 60.4904 132.061 52.9884C132.061 45.4865 126 39.4256 118.498 39.4256C110.996 39.4256 104.935 45.4865 104.935 52.9884ZM159.187 80.1141C159.187 87.616 165.248 93.6769 172.75 93.6769C180.251 93.6769 186.312 87.616 186.312 80.1141C186.312 72.6121 180.251 66.5513 172.75 66.5513C165.248 66.5513 159.187 72.6121 159.187 80.1141Z"
+							fill="currentColor"
+						/>
+					</svg>
+				),
+				value: "70",
+				subData: [
+					{
+						title: <>Photoshop</>,
+						logo: (
+							<svg
+								version="1.1"
+								id="Capa_1"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+								x="0px"
+								y="0px"
+								viewBox="0 0 17.469 17.469"
+								xmlSpace="preserve"
+							>
+								<g>
+									<g>
+										<path
+											d="M5.925,4.982c-0.442,0-0.742,0.043-0.898,0.087v2.841C5.213,7.952,5.44,7.966,5.754,7.966    c1.157,0,1.871-0.585,1.871-1.571C7.624,5.511,7.01,4.982,5.925,4.982z"
+											fill="currentColor"
+										/>
+										<path
+											d="M16.4,0.002H1.07C0.479,0.002,0,0.48,0,1.069v15.329c0,0.59,0.479,1.069,1.07,1.069H16.4    c0.59,0,1.069-0.479,1.069-1.069V1.07C17.469,0.48,16.99,0.002,16.4,0.002z M8.894,8.624c-0.741,0.7-1.842,1.014-3.125,1.014    c-0.287,0-0.543-0.014-0.743-0.043v3.442H2.869V3.541C3.54,3.428,4.482,3.342,5.811,3.342c1.341,0,2.299,0.256,2.94,0.771    c0.617,0.486,1.03,1.286,1.03,2.228S9.466,8.08,8.894,8.624z M12.145,13.179c-0.916,0-1.729-0.198-2.258-0.485l0.385-1.556    c0.4,0.241,1.229,0.527,1.873,0.527c0.655,0,0.927-0.228,0.927-0.586c0-0.356-0.214-0.527-1.027-0.799    c-1.442-0.485-2-1.271-1.986-2.099c0-1.298,1.114-2.286,2.842-2.286c0.814,0,1.542,0.187,1.97,0.4l-0.385,1.5    c-0.314-0.172-0.913-0.399-1.514-0.399c-0.527,0-0.826,0.214-0.826,0.571c0,0.328,0.269,0.499,1.126,0.8    c1.328,0.456,1.886,1.128,1.899,2.154C15.171,12.222,14.141,13.179,12.145,13.179z"
+											fill="currentColor"
+										/>
+									</g>
+								</g>
+							</svg>
+						),
+						value: "70",
+					},
+					{
+						title: <>Figma</>,
+						logo: (
+							<svg
+								aria-hidden="true"
+								focusable="false"
+								data-prefix="fab"
+								data-icon="figma"
+								className="svg-inline--fa fa-figma fa-w-12"
+								role="img"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 384 512"
+							>
+								<path
+									fill="currentColor"
+									d="M14 95.7924C14 42.8877 56.8878 0 109.793 0H274.161C327.066 0 369.954 42.8877 369.954 95.7924C369.954 129.292 352.758 158.776 326.711 175.897C352.758 193.019 369.954 222.502 369.954 256.002C369.954 308.907 327.066 351.795 274.161 351.795H272.081C247.279 351.795 224.678 342.369 207.666 326.904V415.167C207.666 468.777 163.657 512 110.309 512C57.5361 512 14 469.243 14 416.207C14 382.709 31.1945 353.227 57.2392 336.105C31.1945 318.983 14 289.5 14 256.002C14 222.502 31.196 193.019 57.2425 175.897C31.196 158.776 14 129.292 14 95.7924ZM176.288 191.587H109.793C74.2172 191.587 45.3778 220.427 45.3778 256.002C45.3778 291.44 73.9948 320.194 109.381 320.416C109.518 320.415 109.655 320.415 109.793 320.415H176.288V191.587ZM207.666 256.002C207.666 291.577 236.505 320.417 272.081 320.417H274.161C309.737 320.417 338.576 291.577 338.576 256.002C338.576 220.427 309.737 191.587 274.161 191.587H272.081C236.505 191.587 207.666 220.427 207.666 256.002ZM109.793 351.795C109.655 351.795 109.518 351.794 109.381 351.794C73.9948 352.015 45.3778 380.769 45.3778 416.207C45.3778 451.652 74.6025 480.622 110.309 480.622C146.591 480.622 176.288 451.186 176.288 415.167V351.795H109.793ZM109.793 31.3778C74.2172 31.3778 45.3778 60.2173 45.3778 95.7924C45.3778 131.368 74.2172 160.207 109.793 160.207H176.288V31.3778H109.793ZM207.666 160.207H274.161C309.737 160.207 338.576 131.368 338.576 95.7924C338.576 60.2173 309.737 31.3778 274.161 31.3778H207.666V160.207Z"
+								/>
+							</svg>
+						),
+						value: "70",
+					},
+				],
+			},
+		],
+	},
+	{
+		title: (
+			<>
+				<i>Backend</i> Web Development
+			</>
+		),
+		value: "5",
+		subData: [
+			{
+				title: (
+					<>
+						Node.js <small>{"(en aprendizaje)"}</small>
+					</>
+				),
+				logo: (
+					<svg
+						focusable="false"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 448 512"
+					>
+						<path
+							fill="currentColor"
+							d="M224 508c-6.7 0-13.5-1.8-19.4-5.2l-61.7-36.5c-9.2-5.2-4.7-7-1.7-8 12.3-4.3 14.8-5.2 27.9-12.7 1.4-.8 3.2-.5 4.6.4l47.4 28.1c1.7 1 4.1 1 5.7 0l184.7-106.6c1.7-1 2.8-3 2.8-5V149.3c0-2.1-1.1-4-2.9-5.1L226.8 37.7c-1.7-1-4-1-5.7 0L36.6 144.3c-1.8 1-2.9 3-2.9 5.1v213.1c0 2 1.1 4 2.9 4.9l50.6 29.2c27.5 13.7 44.3-2.4 44.3-18.7V167.5c0-3 2.4-5.3 5.4-5.3h23.4c2.9 0 5.4 2.3 5.4 5.3V378c0 36.6-20 57.6-54.7 57.6-10.7 0-19.1 0-42.5-11.6l-48.4-27.9C8.1 389.2.7 376.3.7 362.4V149.3c0-13.8 7.4-26.8 19.4-33.7L204.6 9c11.7-6.6 27.2-6.6 38.8 0l184.7 106.7c12 6.9 19.4 19.8 19.4 33.7v213.1c0 13.8-7.4 26.7-19.4 33.7L243.4 502.8c-5.9 3.4-12.6 5.2-19.4 5.2zm149.1-210.1c0-39.9-27-50.5-83.7-58-57.4-7.6-63.2-11.5-63.2-24.9 0-11.1 4.9-25.9 47.4-25.9 37.9 0 51.9 8.2 57.7 33.8.5 2.4 2.7 4.2 5.2 4.2h24c1.5 0 2.9-.6 3.9-1.7s1.5-2.6 1.4-4.1c-3.7-44.1-33-64.6-92.2-64.6-52.7 0-84.1 22.2-84.1 59.5 0 40.4 31.3 51.6 81.8 56.6 60.5 5.9 65.2 14.8 65.2 26.7 0 20.6-16.6 29.4-55.5 29.4-48.9 0-59.6-12.3-63.2-36.6-.4-2.6-2.6-4.5-5.3-4.5h-23.9c-3 0-5.3 2.4-5.3 5.3 0 31.1 16.9 68.2 97.8 68.2 58.4-.1 92-23.2 92-63.4z"
+						/>
+					</svg>
+				),
+				value: "5",
+			},
+			{
+				title: (
+					<>
+						Express.js <small>{"(en aprendizaje)"}</small>
+					</>
+				),
+				logo: (
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1333.33 773.55">
+						<path
+							d="M1333.33 753.49c-48.5 12.33-78.5.54-105.41-39.87L1036.5 448.79l-27.67-36.67L785.29 714.5c-25.54 36.38-52.33 52.2-100 39.33l286.25-384.25-266.5-347.09c45.83-8.91 77.5-4.38 105.62 36.67l198.54 268.13 200-266.67c25.62-36.38 53.17-50.2 99.17-36.8l-103.33 137-140 182.29c-16.67 20.83-14.38 35.09.96 55.2l267.33 355.18zM.34 363.16l23.41-115.17c63.75-227.92 325-322.63 505.17-181.8 105.29 82.83 131.46 200 126.25 331.25H61.67C52.76 633.69 222.8 776.27 439.58 703.53c76.04-25.54 120.83-85.09 143.25-159.58 11.38-37.33 30.2-43.17 65.29-32.5-17.91 93.17-58.33 171-143.75 219.71-127.62 72.91-309.8 49.33-405.62-52C41.66 620.36 18.08 545.87 7.5 466.2c-1.67-13.17-5-25.71-7.5-38.33.22-21.56.34-43.11.34-64.67v-.04zm62.41-15.83h536.33c-3.5-170.83-109.87-292.17-255.25-293.2-159.58-1.25-274.17 117.2-281.09 293.2h.01z"
+							fill="currentColor"
+						/>
+					</svg>
+				),
+				value: "5",
+			},
+			{
+				title: (
+					<>
+						MongoDb <small>{"(en aprendizaje)"}</small>
+					</>
+				),
+				logo: (
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 61">
+						<g>
+							<path
+								d="M28.60470645270338,24.244114043311754 c-3.416704015552337,-14.156284840919703 -11.491493375746064,-18.810908589146155 -12.36098855348248,-20.589246620377782 c-0.9508452733448065,-1.2546556662063637 -1.9143684836675432,-3.4862566535299346 -1.9143684836675432,-3.4862566535299346 c-0.01584742122241345,-0.03768926111924262 -0.04120329517827502,-0.1041413794084334 -0.07078514812678018,-0.168609852375559 c-0.09825401157896346,1.2546556662063637 -0.14896575949068658,1.7386651247903204 -1.4125334782911176,3.0042308402680433 c-1.956628273593979,1.4361592131753471 -11.995441370618812,9.34396128958905 -12.812111810947183,25.427357560895285 c-0.7617327134240062,15.000325925458531 11.542205123657787,23.938631746685207 13.206184352011197,25.078235984211773 l0.18911255992080048,0.12596147795115256 v-0.010910049271359705 c0.010564947481608964,0.07537852223848523 0.5282473740804479,3.570561579717714 0.8916815674477961,7.2740273960138095 H15.624611976798612 a76.77336035935596,72.07376913192412 0 0 1 1.3734431726091652,-7.7887833570897795 l0.10564947481608968,-0.06446847296712538 a21.603204610393995,20.280789772796616 0 0 0 2.124610938551561,-1.631548277398789 l0.07606762186758463,-0.06446847296712538 c3.5371444168426787,-3.0677074905741364 9.896186306023111,-10.16320680760206 9.833853115881618,-21.475936079341018 a36.667763224420206,34.42318909646186 0 0 0 -0.5335298478212522,-5.629585424021595 zM14.182496645558988,45.04065159984537 s0,-21.038542285825596 0.739546323712627,-21.03457499518147 c0.5768461324958492,0 1.3237879194456026,27.13725982851566 1.3237879194456026,27.13725982851566 c-1.0269128952123907,-0.11604325134082569 -2.0633342431582293,-4.46617744263024 -2.0633342431582293,-6.102684833334193 z"
+								fill="currentColor"
+							/>
+						</g>
+					</svg>
+				),
+				value: "5",
+			},
+			{
+				title: (
+					<>
+						SQL <small>{"(en aprendizaje)"}</small>
+					</>
+				),
+				logo: (
+					<svg
+						aria-hidden="true"
+						focusable="false"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 448 512"
+					>
+						<path
+							fill="currentColor"
+							d="M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z"
+						/>
+					</svg>
+				),
+				value: "5",
+			},
+		],
+	},
+	{
+		title: <>Industrial Automation</>,
+		value: "70",
+		subData: null,
+	},
+	{
+		title: (
+			<>
+				<i>Hardware</i> Development
+			</>
+		),
+		value: "90",
+		subData: [
+			{
+				title: <>Programmable Logic</>,
+				logo: (
+					<svg
+						viewBox="0 0 375 400"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M214.255 0L293.614 95.099L375 0H214.255H89L0.170302 100.352L0 100.352L89.0429 200.124L88.958 200.124L0.187429 300.174L2.67717e-05 300.174L89.096 399.818H214.214L375 399.644L293.614 304.545L214.214 399.818L127.366 300.012L127.478 300.012L216.221 199.993L216.436 199.993L127.355 100.178L127.472 100.178L214.255 0Z"
+							fill="currentColor"
+						/>
+					</svg>
+				),
+				value: "70",
+			},
+			{
+				title: <>Microcontrolers</>,
+				logo: (
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<path
+							d="M15 9H9v6h6V9zm-2 4h-2v-2h2v2zm8-2V9h-2V7c0-1.1-.9-2-2-2h-2V3h-2v2h-2V3H9v2H7c-1.1 0-2 .9-2 2v2H3v2h2v2H3v2h2v2c0 1.1.9 2 2 2h2v2h2v-2h2v2h2v-2h2c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2zm-4 6H7V7h10v10z"
+							fill="currentColor"
+						/>
+					</svg>
+				),
+				value: "60",
+			},
+			{
+				title: <>Programming Languages</>,
+				logo: (
+					<svg viewBox="0 0 327 231" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M84.6749 230.623C68.5176 230.447 55.785 226.934 46.477 220.085C37.169 213.236 32.515 202.786 32.515 188.737V150.012C32.515 141.055 29.7051 134.733 24.0852 131.045C18.6409 127.181 10.7379 125.249 0.37614 125.249V106.018C10.7379 105.843 18.6409 103.911 24.0852 100.223C29.7051 96.5348 32.515 90.3002 32.515 81.5191V42.5309C32.515 28.4811 37.3447 18.0316 47.0039 11.1823C56.6631 4.33306 69.2201 0.908424 84.6749 0.908424V19.8756C75.5425 20.0513 68.342 22.0709 63.0733 25.9346C57.9803 29.7983 55.4338 36.0329 55.4338 44.6384V82.5728C55.4338 100.662 45.8623 111.375 26.7195 114.712V116.292C45.8623 119.629 55.4338 130.342 55.4338 148.431V187.156C55.4338 195.761 57.9803 201.908 63.0733 205.596C68.1664 209.46 75.3669 211.48 84.6749 211.655V230.623ZM201.637 27.4411L163.563 76.3204L124.974 27.4411H99.2481L151.214 91.756L96.161 160.187H121.887L163.563 108.221L205.239 160.187H230.965L176.426 91.756L227.878 27.4411H201.637ZM242.482 211.655C251.614 211.304 258.727 209.197 263.82 205.333C269.089 201.645 271.723 195.498 271.723 186.893V148.695C271.723 130.606 281.294 119.893 300.437 116.556V114.975C281.294 111.638 271.723 100.925 271.723 82.8363V44.375C271.723 35.7695 269.176 29.6227 264.083 25.9346C258.99 22.0709 251.79 20.0513 242.482 19.8756V0.908424C258.639 1.08404 271.372 4.59649 280.68 11.4458C289.988 18.295 294.642 28.7446 294.642 42.7944V81.2557C294.642 90.2124 297.364 96.6226 302.808 100.486C308.428 104.174 316.419 106.018 326.781 106.018V125.249C316.419 125.425 308.428 127.357 302.808 131.045C297.364 134.733 294.642 140.967 294.642 149.748V189C294.642 202.874 289.812 213.236 280.153 220.085C270.494 227.11 257.937 230.623 242.482 230.623V211.655Z"
+							fill="currentColor"
+						/>
+					</svg>
+				),
+				value: "60",
+				subData: [
+					{
+						title: <i>VHDL</i>,
+						value: "50",
+					},
+					{
+						title: <i>C/C++</i>,
+						value: "70",
+					},
+					{
+						title: <i>Handel-C</i>,
+						value: "80",
+					},
+				],
+			},
+		],
+	},
+	{
+		title: <>{"Cryptography & Security"}</>,
+		value: "75",
+		subData: null,
+	},
+];
+//---------Información personal para la Seccion About------------
+const personalInfoEN = {
+	name: "Ander Torres",
+	professionalTitle:
+		"Industrial Automatics and Electronics Engineer & Master Degree in Digital Systems ",
+	details: (
+		<>
+			<p>
+				Since 2007 I have been working in the area of <i>low-level</i>{" "}
+				<i>hardware</i> and <i>software</i> development. I am familiarized with
+				several programming languages and <i>hardware</i> development platforms.
+			</p>
+			<p>
+				I was a professor and researcher in the area of cryptography for several
+				years and, I also accumulated experience in the industrial sector,
+				especially in the topic of <i>packaging</i>, <i>labeling</i> and product{" "}
+				<i>marking</i>.
+			</p>
+			<p>
+				Recently, I have been expanding my profile towards{" "}
+				<i>web development</i> technologies, especially, on the <i>Frontend</i>{" "}
+				area.
+			</p>
+		</>
+	),
+	profilePic,
+	altProfilePic: "Ander Torres",
+	buttonCV: "Download my CV",
+	skillsTitle: "My Skills",
+};
+
+//************************SERVICES*******************************
+//---------Datos de Servicios ofrecidos. Seccion Services--------
+const serviceCardListEN = [
+	{
+		logo: (
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="32"
+				height="32"
+				viewBox="0 0 24 24"
+			>
+				<path d="M20,3H4C2.897,3,2,3.897,2,5v14c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V5C22,3.897,21.103,3,20,3z M4,19V7h16 l0.002,12H4z" />
+				<path d="M9.293 9.293L5.586 13 9.293 16.707 10.707 15.293 8.414 13 10.707 10.707zM14.707 9.293L13.293 10.707 15.586 13 13.293 15.293 14.707 16.707 18.414 13z" />
+			</svg>
+		),
+		title: (
+			<h3>
+				<i>Web</i> Development
+			</h3>
+		),
+		description: (
+			<p>
+				Development of <i>websites</i>, pages and <i>Web</i> applications.
+				Construction of complete projects from beginning to ending:{" "}
+				<i>Frontend</i>,<i>Backend</i> and Database.
+			</p>
+		),
+	},
+	{
+		logo: (
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="32"
+				height="32"
+				viewBox="0 0 24 24"
+			>
+				<path d="M20,3H7C5.897,3,5,3.897,5,5v2H4C2.897,7,2,7.897,2,9v10c0,1.103,0.897,2,2,2h6c1.103,0,2-0.897,2-2h8c1.103,0,2-0.897,2-2 V5C22,3.897,21.103,3,20,3z M6,9h4l-0.003,9H4V9H6z M12,17V9c0-1.103-0.897-2-2-2H7V5h11v12H12z" />
+			</svg>
+		),
+		title: (
+			<h3>
+				<i>Web</i> Design
+			</h3>
+		),
+		description: (
+			<p>
+				Prototyping and layout of static designs to responsive, optimized and
+				accessible <i>websites</i>.
+			</p>
+		),
+	},
+	{
+		logo: (
+			<svg
+				width="32"
+				height="32"
+				viewBox="0 0 32 32"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M3.12534 20.3614L5.792 24.9747C5.96904 25.2807 6.26036 25.5039 6.60191 25.5951C6.94345 25.6864 7.30726 25.6383 7.61334 25.4614L9.47467 24.3867C10.248 24.996 11.1027 25.496 12.0013 25.8694V28C12.0013 28.3536 12.1418 28.6928 12.3919 28.9428C12.6419 29.1929 12.981 29.3334 13.3347 29.3334H18.668C19.0216 29.3334 19.3608 29.1929 19.6108 28.9428C19.8609 28.6928 20.0013 28.3536 20.0013 28V25.8694C20.907 25.4923 21.7571 24.9935 22.528 24.3867L24.3893 25.4614C25.0253 25.828 25.844 25.608 26.2107 24.9747L28.8773 20.3614C29.0528 20.0549 29.1001 19.6916 29.009 19.3505C28.9178 19.0094 28.6956 18.7181 28.3907 18.54L26.5613 17.4827C26.7043 16.4993 26.7034 15.5004 26.5587 14.5174L28.388 13.46C29.0227 13.0934 29.2427 12.2734 28.8747 11.6387L26.208 7.02535C26.031 6.71935 25.7396 6.49618 25.3981 6.40492C25.0566 6.31366 24.6927 6.36177 24.3867 6.53869L22.5253 7.61335C21.7554 7.00586 20.9057 6.50698 20 6.13069V4.00002C20 3.6464 19.8595 3.30726 19.6095 3.05721C19.3594 2.80716 19.0203 2.66669 18.6667 2.66669H13.3333C12.9797 2.66669 12.6406 2.80716 12.3905 3.05721C12.1405 3.30726 12 3.6464 12 4.00002V6.13069C11.0943 6.50777 10.2443 7.00658 9.47334 7.61335L7.61334 6.53869C7.46183 6.45091 7.2945 6.39387 7.12092 6.37082C6.94734 6.34778 6.77093 6.35918 6.60176 6.40439C6.4326 6.44959 6.27401 6.5277 6.13506 6.63425C5.99611 6.7408 5.87954 6.8737 5.792 7.02535L3.12534 11.6387C2.94985 11.9451 2.90253 12.3084 2.99369 12.6496C3.08484 12.9907 3.30707 13.282 3.612 13.46L5.44134 14.5174C5.29752 15.5006 5.29752 16.4995 5.44134 17.4827L3.612 18.54C2.97734 18.9067 2.75734 19.7267 3.12534 20.3614ZM16 10.6667C18.9413 10.6667 21.3333 13.0587 21.3333 16C21.3333 18.9414 18.9413 21.3334 16 21.3334C13.0587 21.3334 10.6667 18.9414 10.6667 16C10.6667 13.0587 13.0587 10.6667 16 10.6667Z" />
+			</svg>
+		),
+		title: <h3>Industrial Development</h3>,
+		description: (
+			<p>
+				Specialized industrial work in the area of packaging, labeling and
+				coding. Industrial marking and traceability.
+			</p>
+		),
+	},
+	{
+		logo: (
+			<svg
+				width="32"
+				height="32"
+				viewBox="0 0 32 32"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M4.57733 23.1L4.10533 26.4C4.07616 26.6048 4.09506 26.8136 4.16053 27.0099C4.22599 27.2061 4.33624 27.3845 4.48253 27.5308C4.62883 27.6771 4.80717 27.7873 5.00343 27.8528C5.19969 27.9183 5.4085 27.9371 5.61333 27.908L8.91333 27.436C9.41333 27.3653 10.6667 24 10.6667 24C10.6667 24 11.296 24.54 11.5533 24.6213C12.1027 24.7946 12.6373 24.256 12.8173 23.7093L13.3333 21.3466C13.3333 21.3466 14.1027 21.736 14.3813 21.7933C14.736 21.8666 15.08 21.648 15.324 21.4026C15.4706 21.2565 15.5807 21.0779 15.6453 20.8813L16 18.68C16 18.68 16.9 18.9293 17.208 18.9653C17.5587 19.0053 17.9 18.8266 18.1507 18.5746L19.668 17.0586C20.9524 17.4749 22.3267 17.5285 23.6397 17.2138C24.9526 16.899 26.1533 16.228 27.1093 15.2746C28.4822 13.8982 29.2532 12.0334 29.2532 10.0893C29.2532 8.14521 28.4822 6.28045 27.1093 4.90398C25.7329 3.53107 23.8681 2.76007 21.924 2.76007C19.9799 2.76007 18.1151 3.53107 16.7387 4.90398C15.7851 5.85988 15.1139 7.06049 14.7991 8.3735C14.4843 9.68652 14.5382 11.0609 14.9547 12.3453L4.95333 22.3453C4.74919 22.5492 4.61717 22.8142 4.57733 23.1ZM24.672 7.34131C25.3994 8.07087 25.8079 9.05908 25.8079 10.0893C25.8079 11.1195 25.3994 12.1078 24.672 12.8373L19.176 7.34131C19.9056 6.6139 20.8938 6.20543 21.924 6.20543C22.9542 6.20543 23.9424 6.6139 24.672 7.34131Z" />
+			</svg>
+		),
+		title: <h3>Cryptography y Security</h3>,
+		description: (
+			<p>
+				Development of applications related to cryptographic algorithms and
+				software security.
+			</p>
+		),
+	},
+	{
+		logo: (
+			<svg
+				width="32"
+				height="32"
+				viewBox="0 0 32 32"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M10.6653 29.3333H21.332C22.8027 29.3333 23.9987 28.1373 23.9987 26.6666V5.33329C23.9987 3.86263 22.8027 2.66663 21.332 2.66663H10.6653C9.19467 2.66663 7.99867 3.86263 7.99867 5.33329V26.6666C7.99867 28.1373 9.19467 29.3333 10.6653 29.3333ZM3.99867 9.33329H6.66533V6.66663H3.99867V7.33329H2.66533V8.66663H3.99867V9.33329ZM27.9987 6.66663H25.332V9.33329H27.9987V8.66663H29.332V7.33329H27.9987V6.66663ZM3.99867 14.6666H6.66533V12H3.99867V12.6666H2.66533V14H3.99867V14.6666ZM27.9987 12H25.332V14.6666H27.9987V14H29.332V12.6666H27.9987V12ZM3.99867 20H6.66533V17.3333H3.99867V18H2.66533V19.3333H3.99867V20ZM27.9987 17.3333H25.332V20H27.9987V19.3333H29.332V18H27.9987V17.3333ZM3.99867 25.3333H6.66533V22.6666H3.99867V23.3333H2.66533V24.6666H3.99867V25.3333ZM27.9987 22.6666H25.332V25.3333H27.9987V24.6666H29.332V23.3333H27.9987V22.6666Z" />
+			</svg>
+		),
+		title: (
+			<h3>
+				<i>Hardware</i> Design
+			</h3>
+		),
+		description: (
+			<p>
+				Customized solutions with embedded systems, microcontrollers and smart
+				cards.
+			</p>
+		),
+	},
+	{
+		logo: (
+			<svg
+				width="32"
+				height="32"
+				viewBox="0 0 32 32"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M26.6667 4H5.33333C3.86266 4 2.66666 5.196 2.66666 6.66667V25.3333C2.66666 26.804 3.86266 28 5.33333 28H26.6667C28.1373 28 29.3333 26.804 29.3333 25.3333V6.66667C29.3333 5.196 28.1373 4 26.6667 4ZM22.6667 8H25.3333V10.6667H22.6667V8ZM18.6667 8H21.3333V10.6667H18.6667V8ZM5.33333 25.3333V13.3333H26.668L26.6693 25.3333H5.33333Z" />
+			</svg>
+		),
+		title: <h3>Native Development</h3>,
+		description: <p>Desktop applications for Windows.</p>,
+	},
+];
+//---------Titulo de la Seccion----------------------------------
+const serviceSectionTitleEN = "What do I offer?";
+
+//************************PORTFOLIO******************************
+//---------Datos de trabajos realizados. Seccion Portafolio------
+const portfolioDataEN = [
+	{
+		href: "work-1",
+		img: img1,
+		imgAlt: "TokenP",
+		title: "Hardware Key",
+		description:
+			"Cryptographic token that allows to digitally sign documents and encrypt files. It has  different security algorithms implemented like RSA, ECDSA, AES and GOST. It is protected against Side Channel attacks and its main objective is that the personal private keys always remain secured inside the device and are never be copied to the computer",
+		clientName: "Datys",
+		date: "01/10/14",
+		type: "Cryptography and Hardware Design",
+		link: "",
+	},
+	{
+		href: "work-2",
+		img: img2,
+		imgAlt: "Responsive Portfolio ",
+		title: "Web Portfolio",
+		description:
+			"SPA Web Portfolio designed for displaying information about my professional skills, in a more accessible and structured way. Frontend and UI/UX design tools such as Figma, React, TailwindCSS, SASS were used. I made use of the FormSubmit API  to process the forms and send them to my email. It was programmed in a such way that it is easy to maintain and update the page",
+		clientName: "Ander Torres",
+		date: (
+			<>
+				14/01/22 <b>(Last update)</b>
+			</>
+		),
+		type: "Landing Page",
+		link: "https://ander8585.github.io/react-portfolio",
+	},
+	{
+		href: "work-3",
+		img: img3,
+		imgAlt: "Labeling Machine",
+		title: "Industrial Sector Consulting",
+		description:
+			"Conjunto de trabajos técnicos para la industria cubana específicamente en el área de empaquetado, marcaje, etiquetado y trazabilidad. Este trabajo se ha realizado asociado a Insepra Limited, proveedera de marcas de gran prestigio internacional como Domino printing, Intrex, entre otras. Se han desarrollado varios soluciones para empresas como Papas&Co, ICTSA, Prodal, Eleka, Nescor, Nestle Coralac, Inmunoensayo, entre otras",
+		clientName: "Several manufacturing companies",
+		date: "20/10/18",
+		type: "Industrial Technical Work",
+		link: "https://insepra.com/our-team/",
+	},
+	{
+		href: "work-4",
+		img: img4,
+		imgAlt: "React Firebase Chat",
+		title: "React Firebase Chat",
+		description:
+			"Chat room developed in React and making use of Firebase services to store and share messages as well as authenticating users. Figma and Photoshop tools were used for interface design and two third-party components, was implemented for communication with the Firebase SDK from React hooks and creating a context menu. The rest of the app was programmed from scratch in React. To access from Cuba is necessary to use a vpn.",
+		clientName: "Ander Torres",
+		date: "5/01/22",
+		type: "Web App",
+		link: "https://ander8585.github.io/react-firebase-chat",
+	},
+	/*
+	{
+		href: "work-5",
+		img: img5,
+		imgAlt: "Trabajo-5",
+		title: "Nombre del proyecto 5",
+		description:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
+		clientName: "Cliente 1",
+		date: "10/10/21",
+		type: "Sitio Web",
+		link: "http://index.html",
+	},
+	{
+		href: "work-6",
+		img: img6,
+		imgAlt: "Trabajo-6",
+		title: "Nombre del proyecto 6",
+		description:
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit.Aspernatur nisi reiciendis incidunt, ipsam at, exercitatione est tempore vero possimus harum mollitia quam eum numquam consectetur alias provident hic culpa necessitatibus!",
+		clientName: "Cliente 1",
+		date: "10/10/21",
+		type: "Sitio Web",
+		link: "http://index.html",
+	}, */
+];
+//--------Textos de los modales del portafolio. Seccion Portfolio
+//--------Componente ModalPortfolioCard--------------------------
+const modalTextInfoEN = {
+	textClient: "CLIENT:",
+	textDate: "DATE:",
+	textType: "TYPE:",
+	textLink: "LINK:",
+};
+//---------Titulo de la Seccion----------------------------------
+const portfolioSectionTitleEN = "My Projects";
+
+//************************TESTIMONIALS***************************
+//---------Datos para el componente ResponsiveCarousel2D3D-------
+const slidesEN = [
+	{
+		title: "Yanquiel Jauregui",
+		subtitle: "Maintenance manager (Eleka Cable Factory )",
+		description:
+			"He is a very intelligent person and his work has been very valuable for our plant. He is very capable and has a good treatment with the work staff of the company",
+		image: customer6,
+	},
+	{
+		title: "Dr.C Raudel Cuiman",
+		subtitle: "Professor and researcher (CUJAE University )",
+		description:
+			"He is an excellent professional and a great teammate. He always comes up with interesting ideas and learns quickly.",
+		image: customer5,
+	},
+	{
+		title: "Derek Lawrence",
+		subtitle: "Managing Director (Insepra Ltd.)",
+		description:
+			"He is a great worker. A very creative and efficient engineer for finding solutions to the most challenging problems. Having him in this company makes a difference",
+		image: customer7,
+	},
+	/*
+	{
+		title: "Robert C. Martin",
+		subtitle: "Team Leader",
+		description:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi nam at eius consequuntur nihil dolore laboriosam consequatur, blanditiis tempore, sunt rem. Laudantium, delectus at nihil iste praesentium quos id quidem!",
+		image: customer2,
+	}, */
+	/* {
+		title: "Five",
+		subtitle: "Australia",
+		description: "A piece of heaven",
+		image:
+			"https://images.unsplash.com/photo-1579130781921-76e18892b57b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+	}, */
+];
+//---------Titulo de la Seccion----------------------------------
+const testimonialsSectionTitleEN = "Testimonials";
+
+//************************CONTACTS*******************************
+//---------Datos de contactos. Seccion Contacts------------------
+const contactInfoEN = {
+	localAddressTitle: "LOCATION",
+	localAddress: <>La Habana, Cuba</>,
+	telTitle: "PHONE NUMBER",
+	tel: "+5358343813",
+	emailTitle: "EMAIL",
+	email: "ander8585@gmail.com",
+	socialMediaTitle: "SOCIAL MEDIA",
+	socialMedia: {
+		facebook: {
+			href: "https://www.facebook.com/ander.torreslopez/",
+			img: (
+				<>
+					<svg
+						width="24"
+						height="24"
+						viewBox="0 0 11 12"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M10.8281 5.875C10.8281 2.93164 8.44336 0.546875 5.5 0.546875C2.55664 0.546875 0.171875 2.93164 0.171875 5.875C0.171875 8.53906 2.10547 10.752 4.66211 11.1387V7.42188H3.30859V5.875H4.66211V4.71484C4.66211 3.38281 5.45703 2.63086 6.66016 2.63086C7.26172 2.63086 7.86328 2.73828 7.86328 2.73828V4.04883H7.19727C6.53125 4.04883 6.31641 4.45703 6.31641 4.88672V5.875H7.79883L7.5625 7.42188H6.31641V11.1387C8.87305 10.752 10.8281 8.53906 10.8281 5.875Z" />
+					</svg>
+				</>
+			),
+		},
+		twitter: {
+			href: "https://twitter.com/Ander56952020?=09",
+			img: (
+				<>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809	c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793	c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05	c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032	c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028	c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22	c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z" />
+					</svg>
+				</>
+			),
+		},
+		github: {
+			href: "https://github.com/Ander8585",
+			img: (
+				<>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<path
+							fillRule="evenodd"
+							clipRule="evenodd"
+							d="M12.026,2c-5.509,0-9.974,4.465-9.974,9.974c0,4.406,2.857,8.145,6.821,9.465	c0.499,0.09,0.679-0.217,0.679-0.481c0-0.237-0.008-0.865-0.011-1.696c-2.775,0.602-3.361-1.338-3.361-1.338	c-0.452-1.152-1.107-1.459-1.107-1.459c-0.905-0.619,0.069-0.605,0.069-0.605c1.002,0.07,1.527,1.028,1.527,1.028	c0.89,1.524,2.336,1.084,2.902,0.829c0.091-0.645,0.351-1.085,0.635-1.334c-2.214-0.251-4.542-1.107-4.542-4.93	c0-1.087,0.389-1.979,1.024-2.675c-0.101-0.253-0.446-1.268,0.099-2.64c0,0,0.837-0.269,2.742,1.021	c0.798-0.221,1.649-0.332,2.496-0.336c0.849,0.004,1.701,0.115,2.496,0.336c1.906-1.291,2.742-1.021,2.742-1.021	c0.545,1.372,0.203,2.387,0.099,2.64c0.64,0.696,1.024,1.587,1.024,2.675c0,3.833-2.33,4.675-4.552,4.922	c0.355,0.308,0.675,0.916,0.675,1.846c0,1.334-0.012,2.41-0.012,2.737c0,0.267,0.178,0.577,0.687,0.479	C19.146,20.115,22,16.379,22,11.974C22,6.465,17.535,2,12.026,2z"
+						/>
+					</svg>
+				</>
+			),
+		},
+		linkein: {
+			href: "https://www.linkedin.com/in/ander-torres-6a457312a/",
+			img: (
+				<>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h16c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z M8.339,18.337H5.667	v-8.59h2.672V18.337z M7.003,8.574c-0.856,0-1.548-0.694-1.548-1.548s0.691-1.548,1.548-1.548c0.854,0,1.548,0.693,1.548,1.548	S7.857,8.574,7.003,8.574z M18.338,18.337h-2.669V14.16c0-0.996-0.018-2.277-1.388-2.277c-1.39,0-1.601,1.086-1.601,2.207v4.248	h-2.667v-8.59h2.56v1.174h0.037c0.355-0.675,1.227-1.387,2.524-1.387c2.704,0,3.203,1.778,3.203,4.092V18.337z" />
+					</svg>
+				</>
+			),
+		},
+		instagram: {
+			href: "https://www.instagram.com/tl.ander/",
+			img: (
+				<>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624	C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003	c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z" />
+						<circle cx="16.806" cy="7.207" r="1.078" />
+						<path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42	c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111	c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71	c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45	c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633	c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311	c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311	c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654	c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712	c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055	c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669	c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z" />
+					</svg>
+				</>
+			),
+		},
+	},
+};
+//---------Datos de texto del formulario. Seccion Contacts-------
+const formTextInfoEN = {
+	namePHolderText: "Insert your Name*",
+	nameTitleErrorText:
+		"Name only accepts alphabetic characters and white spaces.",
+	emailPHolderText: "Insert your email*",
+	emailTitleErrorText: "Enter a correct Email",
+	commentsPHolderText: "Give me your feedback",
+	submitButtonText: "SEND MESSAGE",
+	answerModalText: (
+		<>
+			Thank you!
+			<br />
+			for your comments
+		</>
+	),
+	answerErrorModalText: (
+		<>
+			An Error
+			<br />
+			has happened!
+		</>
+	),
+};
+//---------Titulo de la Seccion----------------------------------
+const contactsSectionTitleEN = "Contacts";
+
+//************************FOOTER*********************************
+const footerMessageEN = <>Designed by Ander</>;
+
+//===============================================================
+//===============================================================
+//===============================================================
+
+let storedLanguage = window.localStorage.getItem("languageSelected");
+
+let portfolioData;
+let skillList;
+let personalInfo;
+let serviceCardList;
+let slides;
+let contactInfo;
+let menuItems;
+let welcomeMessage;
+let footerMessage;
+let welcomeButtonText;
+let serviceSectionTitle;
+let portfolioSectionTitle;
+let testimonialsSectionTitle;
+let formTextInfo;
+let contactsSectionTitle;
+let modalTextInfo;
+
+switch (storedLanguage) {
+	case "ES":
+		portfolioData = portfolioDataES;
+		skillList = skillListES;
+		personalInfo = personalInfoES;
+		serviceCardList = serviceCardListES;
+		slides = slidesES;
+		contactInfo = contactInfoES;
+		menuItems = menuItemsES;
+		welcomeMessage = welcomeMessageES;
+		footerMessage = footerMessageES;
+		welcomeButtonText = welcomeButtonTextES;
+		serviceSectionTitle = serviceSectionTitleES;
+		portfolioSectionTitle = portfolioSectionTitleES;
+		testimonialsSectionTitle = testimonialsSectionTitleES;
+		formTextInfo = formTextInfoES;
+		contactsSectionTitle = contactsSectionTitleES;
+		modalTextInfo = modalTextInfoES;
+		break;
+	case "EN":
+		portfolioData = portfolioDataEN;
+		skillList = skillListEN;
+		personalInfo = personalInfoEN;
+		serviceCardList = serviceCardListEN;
+		slides = slidesEN;
+		contactInfo = contactInfoEN;
+		menuItems = menuItemsEN;
+		welcomeMessage = welcomeMessageEN;
+		footerMessage = footerMessageEN;
+		welcomeButtonText = welcomeButtonTextEN;
+		serviceSectionTitle = serviceSectionTitleEN;
+		portfolioSectionTitle = portfolioSectionTitleEN;
+		testimonialsSectionTitle = testimonialsSectionTitleEN;
+		formTextInfo = formTextInfoEN;
+		contactsSectionTitle = contactsSectionTitleEN;
+		modalTextInfo = modalTextInfoEN;
+		break;
+	default:
+		portfolioData = portfolioDataES;
+		skillList = skillListES;
+		personalInfo = personalInfoES;
+		serviceCardList = serviceCardListES;
+		slides = slidesES;
+		contactInfo = contactInfoES;
+		menuItems = menuItemsES;
+		welcomeMessage = welcomeMessageES;
+		footerMessage = footerMessageES;
+		welcomeButtonText = welcomeButtonTextES;
+		serviceSectionTitle = serviceSectionTitleES;
+		portfolioSectionTitle = portfolioSectionTitleES;
+		testimonialsSectionTitle = testimonialsSectionTitleES;
+		formTextInfo = formTextInfoES;
+		contactsSectionTitle = contactsSectionTitleES;
+		modalTextInfo = modalTextInfoES;
+		break;
+}
+
+//***************************************************************
+
+const SelectLanguage = () => {
+	const [language, setLanguage] = useState(storedLanguage || "ES");
+
+	useEffect(() => {
+		switch (language) {
+			case "ES":
+				portfolioData = portfolioDataES;
+				skillList = skillListES;
+				personalInfo = personalInfoES;
+				serviceCardList = serviceCardListES;
+				slides = slidesES;
+				contactInfo = contactInfoES;
+				menuItems = menuItemsES;
+				welcomeMessage = welcomeMessageES;
+				footerMessage = footerMessageES;
+				welcomeButtonText = welcomeButtonTextES;
+				serviceSectionTitle = serviceSectionTitleES;
+				portfolioSectionTitle = portfolioSectionTitleES;
+				testimonialsSectionTitle = testimonialsSectionTitleES;
+				formTextInfo = formTextInfoES;
+				contactsSectionTitle = contactsSectionTitleES;
+				modalTextInfo = modalTextInfoES;
+				break;
+			case "EN":
+				portfolioData = portfolioDataEN;
+				skillList = skillListEN;
+				personalInfo = personalInfoEN;
+				serviceCardList = serviceCardListEN;
+				slides = slidesEN;
+				contactInfo = contactInfoEN;
+				menuItems = menuItemsEN;
+				welcomeMessage = welcomeMessageEN;
+				footerMessage = footerMessageEN;
+				welcomeButtonText = welcomeButtonTextEN;
+				serviceSectionTitle = serviceSectionTitleEN;
+				portfolioSectionTitle = portfolioSectionTitleEN;
+				testimonialsSectionTitle = testimonialsSectionTitleEN;
+				formTextInfo = formTextInfoEN;
+				contactsSectionTitle = contactsSectionTitleEN;
+				modalTextInfo = modalTextInfoEN;
+				break;
+			default:
+				portfolioData = portfolioDataES;
+				skillList = skillListES;
+				personalInfo = personalInfoES;
+				serviceCardList = serviceCardListES;
+				slides = slidesES;
+				contactInfo = contactInfoES;
+				menuItems = menuItemsES;
+				welcomeMessage = welcomeMessageES;
+				footerMessage = footerMessageES;
+				welcomeButtonText = welcomeButtonTextES;
+				serviceSectionTitle = serviceSectionTitleES;
+				portfolioSectionTitle = portfolioSectionTitleES;
+				testimonialsSectionTitle = testimonialsSectionTitleES;
+				formTextInfo = formTextInfoES;
+				contactsSectionTitle = contactsSectionTitleES;
+				modalTextInfo = modalTextInfoES;
+				break;
+		}
+		window.localStorage.setItem("languageSelected", language);
+	}, [language]);
+
+	const changeSelect = (e) => {
+		setLanguage(e.target.value);
+	};
+
+	return (
+		<div class="relative inline-flex">
+			<svg
+				className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 412 232"
+			>
+				<path
+					d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+					fill="#FF4C29FF"
+					fill-rule="nonzero"
+				/>
+			</svg>
+			<select
+				/* defaultValue="ES" */
+				value={language}
+				onChange={changeSelect}
+				name="language"
+				id="languageSelect"
+				className="border border-first-color rounded-full text-first-color h-10 pl-4 pr-10 bg-second-color hover:border-white focus:outline-none appearance-none cursor-pointer font-['Raleway'] font-bold"
+			>
+				<option value="ES" className="font-bold">
+					ES
+				</option>
+				<option value="EN" className="font-bold">
+					EN
+				</option>
+			</select>
+		</div>
+	);
+};
 
 export {
 	portfolioData,
@@ -869,9 +1971,18 @@ export {
 	slides,
 	contactInfo,
 	menuItems,
-	logoSvg,
 	welcomeMessage,
+	footerMessage,
+	welcomeButtonText,
+	serviceSectionTitle,
+	portfolioSectionTitle,
+	testimonialsSectionTitle,
+	formTextInfo,
+	contactsSectionTitle,
+	modalTextInfo,
 	heroImageDataTestimonials,
 	heroImageDataHome,
-	footerMessage
+	logoSvg,
 };
+
+export default SelectLanguage;

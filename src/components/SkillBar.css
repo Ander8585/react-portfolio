@@ -35,7 +35,7 @@ progress::-moz-progress-bar {
 	margin: 1rem auto;
 }
 
-.progress > p {
+.progress > div {
 	margin: 0;
 	display: flex;
 	justify-content: space-between;

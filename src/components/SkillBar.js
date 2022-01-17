@@ -5,7 +5,7 @@ const SkillBar = ({ data = null }) => {
 	return (
 		data && (
 			<div className="progress">
-				<p>
+				<div>
 					<b>
 						{data.subData ? (
 							<>
@@ -30,7 +30,7 @@ const SkillBar = ({ data = null }) => {
 						)}
 					</b>
 					<b>{`${data.value}%`}</b>
-				</p>
+				</div>
 				<progress value={data.value} min="0" max="100"></progress>
 			</div>
 		)

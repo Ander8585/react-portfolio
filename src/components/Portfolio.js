@@ -9,15 +9,14 @@ import {
 import "./Portfolio.css";
 import PortfolioCard from "./PortfolioCard";
 import ModalPortfolio from "./ModalPortfolio";
-import { portfolioData } from "../data/dataInfo";
-
+import { portfolioData, portfolioSectionTitle } from "../data/dataInfo";
 
 const Portfolio = () => {
 	return (
 		<HashRouter>
 			<section id="portfolio" className="portfolio section">
 				<div className="my-container">
-					<h2 className="section-title">Mis Trabajos</h2>
+					<h2 className="section-title">{portfolioSectionTitle}</h2>
 					{portfolioData.map((el, index) => (
 						<PortfolioCard data={el} key={index} />
 					))}

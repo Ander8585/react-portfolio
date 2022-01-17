@@ -10,7 +10,9 @@ const Menu = ({ isOpen, onClick, menuItems }) => {
 	return (
 		<nav className={isVisible} onClick={onClick}>
 			{menuItems.map((item) => (
-				<a href={item.href}>{item.title}</a>
+				<a key={item.title} href={item.href}>
+					{item.title}
+				</a>
 			))}
 		</nav>
 	);

@@ -18,7 +18,7 @@ const About = () => {
 				{personalInfo.details}
 				<div className="text-center lg:text-left">
 					<LinkBtn href="https://ander8585.github.io/react-portfolio">
-						DESCARGA MI CV
+						{personalInfo.buttonCV}
 					</LinkBtn>
 				</div>
 			</article>
@@ -30,7 +30,7 @@ const About = () => {
 				/>
 			</article>
 			<article className="skills">
-				<h2 className="text-center lg:text-left">Mis Habilidades</h2>
+				<h2 className="text-center lg:text-left">{personalInfo.skillsTitle}</h2>
 				{skillList.map((el, index) => (
 					<SkillBar key={index} data={el} />
 				))}
