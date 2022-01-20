@@ -12,7 +12,7 @@ const About = () => {
 		>
 			<article className="lg:text-right">
 				<aside className="text-center lg:text-right">
-					<h1>{personalInfo.name}</h1>
+					<h1>{personalInfo && personalInfo.name}</h1>
 					<h5>{personalInfo.professionalTitle}</h5>
 				</aside>
 				{personalInfo.details}

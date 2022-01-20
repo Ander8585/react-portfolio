@@ -511,8 +511,8 @@ const personalInfoES = {
 		<>
 			<p>
 				Desde 2007 tengo experiencia en el área del desarrollo
-				<i>hardware</i> y <i>software</i> de bajo nivel. Manejo varios lenguajes
-				de programación y plataformas de desarrollo <i>hardware</i>.
+				<i> hardware</i> y <i>software</i> de bajo nivel. Manejo varios
+				lenguajes de programación y plataformas de desarrollo <i>hardware</i>.
 			</p>
 			<p>
 				Fui profesor e investigador por varios años en el área de la
@@ -1802,79 +1802,63 @@ const footerMessageEN = <>Designed by Ander</>;
 
 let storedLanguage = window.localStorage.getItem("languageSelected");
 
-let portfolioData;
-let skillList;
-let personalInfo;
-let serviceCardList;
-let slides;
-let contactInfo;
-let menuItems;
-let welcomeMessage;
-let footerMessage;
-let welcomeButtonText;
-let serviceSectionTitle;
-let portfolioSectionTitle;
-let testimonialsSectionTitle;
-let formTextInfo;
-let contactsSectionTitle;
-let modalTextInfo;
+const dataGlobalObject = {
+	ES: [
+		portfolioDataES,
+		skillListES,
+		personalInfoES,
+		serviceCardListES,
+		slidesES,
+		contactInfoES,
+		menuItemsES,
+		welcomeMessageES,
+		footerMessageES,
+		welcomeButtonTextES,
+		serviceSectionTitleES,
+		portfolioSectionTitleES,
+		testimonialsSectionTitleES,
+		formTextInfoES,
+		contactsSectionTitleES,
+		modalTextInfoES,
+	],
+	EN: [
+		portfolioDataEN,
+		skillListEN,
+		personalInfoEN,
+		serviceCardListEN,
+		slidesEN,
+		contactInfoEN,
+		menuItemsEN,
+		welcomeMessageEN,
+		footerMessageEN,
+		welcomeButtonTextEN,
+		serviceSectionTitleEN,
+		portfolioSectionTitleEN,
+		testimonialsSectionTitleEN,
+		formTextInfoEN,
+		contactsSectionTitleEN,
+		modalTextInfoEN,
+	],
+};
 
-switch (storedLanguage) {
-	case "ES":
-		portfolioData = portfolioDataES;
-		skillList = skillListES;
-		personalInfo = personalInfoES;
-		serviceCardList = serviceCardListES;
-		slides = slidesES;
-		contactInfo = contactInfoES;
-		menuItems = menuItemsES;
-		welcomeMessage = welcomeMessageES;
-		footerMessage = footerMessageES;
-		welcomeButtonText = welcomeButtonTextES;
-		serviceSectionTitle = serviceSectionTitleES;
-		portfolioSectionTitle = portfolioSectionTitleES;
-		testimonialsSectionTitle = testimonialsSectionTitleES;
-		formTextInfo = formTextInfoES;
-		contactsSectionTitle = contactsSectionTitleES;
-		modalTextInfo = modalTextInfoES;
-		break;
-	case "EN":
-		portfolioData = portfolioDataEN;
-		skillList = skillListEN;
-		personalInfo = personalInfoEN;
-		serviceCardList = serviceCardListEN;
-		slides = slidesEN;
-		contactInfo = contactInfoEN;
-		menuItems = menuItemsEN;
-		welcomeMessage = welcomeMessageEN;
-		footerMessage = footerMessageEN;
-		welcomeButtonText = welcomeButtonTextEN;
-		serviceSectionTitle = serviceSectionTitleEN;
-		portfolioSectionTitle = portfolioSectionTitleEN;
-		testimonialsSectionTitle = testimonialsSectionTitleEN;
-		formTextInfo = formTextInfoEN;
-		contactsSectionTitle = contactsSectionTitleEN;
-		modalTextInfo = modalTextInfoEN;
-		break;
-	default:
-		portfolioData = portfolioDataES;
-		skillList = skillListES;
-		personalInfo = personalInfoES;
-		serviceCardList = serviceCardListES;
-		slides = slidesES;
-		contactInfo = contactInfoES;
-		menuItems = menuItemsES;
-		welcomeMessage = welcomeMessageES;
-		footerMessage = footerMessageES;
-		welcomeButtonText = welcomeButtonTextES;
-		serviceSectionTitle = serviceSectionTitleES;
-		portfolioSectionTitle = portfolioSectionTitleES;
-		testimonialsSectionTitle = testimonialsSectionTitleES;
-		formTextInfo = formTextInfoES;
-		contactsSectionTitle = contactsSectionTitleES;
-		modalTextInfo = modalTextInfoES;
-		break;
-}
+let [
+	portfolioData,
+	skillList,
+	personalInfo,
+	serviceCardList,
+	slides,
+	contactInfo,
+	menuItems,
+	welcomeMessage,
+	footerMessage,
+	welcomeButtonText,
+	serviceSectionTitle,
+	portfolioSectionTitle,
+	testimonialsSectionTitle,
+	formTextInfo,
+	contactsSectionTitle,
+	modalTextInfo,
+] = storedLanguage ? dataGlobalObject[storedLanguage] : dataGlobalObject["ES"]; //default option ES
 
 //***************************************************************
 
@@ -1882,62 +1866,24 @@ const SelectLanguage = () => {
 	const [language, setLanguage] = useState(storedLanguage || "ES");
 
 	useEffect(() => {
-		switch (language) {
-			case "ES":
-				portfolioData = portfolioDataES;
-				skillList = skillListES;
-				personalInfo = personalInfoES;
-				serviceCardList = serviceCardListES;
-				slides = slidesES;
-				contactInfo = contactInfoES;
-				menuItems = menuItemsES;
-				welcomeMessage = welcomeMessageES;
-				footerMessage = footerMessageES;
-				welcomeButtonText = welcomeButtonTextES;
-				serviceSectionTitle = serviceSectionTitleES;
-				portfolioSectionTitle = portfolioSectionTitleES;
-				testimonialsSectionTitle = testimonialsSectionTitleES;
-				formTextInfo = formTextInfoES;
-				contactsSectionTitle = contactsSectionTitleES;
-				modalTextInfo = modalTextInfoES;
-				break;
-			case "EN":
-				portfolioData = portfolioDataEN;
-				skillList = skillListEN;
-				personalInfo = personalInfoEN;
-				serviceCardList = serviceCardListEN;
-				slides = slidesEN;
-				contactInfo = contactInfoEN;
-				menuItems = menuItemsEN;
-				welcomeMessage = welcomeMessageEN;
-				footerMessage = footerMessageEN;
-				welcomeButtonText = welcomeButtonTextEN;
-				serviceSectionTitle = serviceSectionTitleEN;
-				portfolioSectionTitle = portfolioSectionTitleEN;
-				testimonialsSectionTitle = testimonialsSectionTitleEN;
-				formTextInfo = formTextInfoEN;
-				contactsSectionTitle = contactsSectionTitleEN;
-				modalTextInfo = modalTextInfoEN;
-				break;
-			default:
-				portfolioData = portfolioDataES;
-				skillList = skillListES;
-				personalInfo = personalInfoES;
-				serviceCardList = serviceCardListES;
-				slides = slidesES;
-				contactInfo = contactInfoES;
-				menuItems = menuItemsES;
-				welcomeMessage = welcomeMessageES;
-				footerMessage = footerMessageES;
-				welcomeButtonText = welcomeButtonTextES;
-				serviceSectionTitle = serviceSectionTitleES;
-				portfolioSectionTitle = portfolioSectionTitleES;
-				testimonialsSectionTitle = testimonialsSectionTitleES;
-				formTextInfo = formTextInfoES;
-				contactsSectionTitle = contactsSectionTitleES;
-				modalTextInfo = modalTextInfoES;
-				break;
-		}
+		[
+			portfolioData,
+			skillList,
+			personalInfo,
+			serviceCardList,
+			slides,
+			contactInfo,
+			menuItems,
+			welcomeMessage,
+			footerMessage,
+			welcomeButtonText,
+			serviceSectionTitle,
+			portfolioSectionTitle,
+			testimonialsSectionTitle,
+			formTextInfo,
+			contactsSectionTitle,
+			modalTextInfo,
+		] = dataGlobalObject[language];
 		window.localStorage.setItem("languageSelected", language);
 	}, [language]);
 
@@ -1946,7 +1892,7 @@ const SelectLanguage = () => {
 	};
 
 	return (
-		<div class="relative inline-flex">
+		<div className="relative inline-flex">
 			<svg
 				className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -1955,23 +1901,21 @@ const SelectLanguage = () => {
 				<path
 					d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
 					fill="#FF4C29FF"
-					fill-rule="nonzero"
+					fillRule="nonzero"
 				/>
 			</svg>
 			<select
-				/* defaultValue="ES" */
 				value={language}
 				onChange={changeSelect}
 				name="language"
 				id="languageSelect"
 				className="border border-first-color rounded-full text-first-color h-10 pl-4 pr-10 bg-second-color hover:border-white focus:outline-none appearance-none cursor-pointer font-['Raleway'] font-bold"
 			>
-				<option value="ES" className="font-bold">
-					ES
-				</option>
-				<option value="EN" className="font-bold">
-					EN
-				</option>
+				{Object.entries(dataGlobalObject).map((el) => (
+					<option value={el[0]} className="font-bold" onClick={changeSelect}>
+						{el[0]}
+					</option>
+				))}
 			</select>
 		</div>
 	);
