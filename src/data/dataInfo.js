@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 //----------Imagenes para portfolioData. Seccion Portafolio------
 import img1 from "../assets/token.jpg";
 import img2 from "../assets/portfolioPic.jpg";
@@ -52,6 +52,359 @@ const heroImageDataTestimonials = {
 //===============================================================
 //==========================ESPAÑOL==============================
 //===============================================================
+//*********************Language flag*****************************
+const languageSvgES = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		id="flag-icons-es"
+		viewBox="0 0 640 480"
+		height="16"
+		className="relative top-0.5"
+	>
+		<path fill="#AA151B" d="M0 0h640v480H0z" />
+		<path fill="#F1BF00" d="M0 120h640v240H0z" />
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M124 223h21.4v-5.5H124v5.6z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-linejoin="round"
+			stroke-width=".4"
+			d="M126.2 226.8a1 1 0 0 1 .4 0h16.5a1.4 1.4 0 0 1-1-1.2c0-.6.5-1.1 1-1.3a1.7 1.7 0 0 1-.4 0h-16a1.4 1.4 0 0 1-.5 0c.6.2 1 .7 1 1.3a1.3 1.3 0 0 1-1 1.2z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M126.6 226.8h16c.6 0 1 .3 1 .7 0 .4-.4.8-1 .8h-16c-.5 0-1-.4-1-.8s.5-.8 1-.8z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M126.6 223h16c.6 0 1 .4 1 .7 0 .4-.4.6-1 .6h-16c-.5 0-1-.2-1-.6 0-.3.5-.6 1-.6z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-linejoin="round"
+			stroke-width=".4"
+			d="m126.2 308 .2.5c0 1.5-1.3 2.6-2.7 2.6h22a2.7 2.7 0 0 1-2.7-2.6v-.5a1.3 1.3 0 0 1-.3 0h-16a1.4 1.4 0 0 1-.5 0z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M126.6 306.5h16c.6 0 1 .3 1 .8 0 .4-.4.7-1 .7h-16c-.5 0-1-.3-1-.8 0-.4.5-.7 1-.7z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M123.7 316.7h22V311h-22v5.6z"
+		/>
+		<path
+			fill="#ad1519"
+			d="M122 286.7c-2.2 1.2-3.7 2.5-3.4 3.2 0 .6.8 1 1.8 1.6 1.5 1.1 2.5 3 1.7 4a5.5 5.5 0 0 0-.1-8.8"
+		/>
+
+		<path fill="#ccc" d="M126.8 305.6h15.6V229h-15.6v76.5z" />
+
+		<path
+			fill="#ad1519"
+			d="M158.4 257.7a49.6 49.6 0 0 0-23.3-2c-9.4 1.6-16.5 5.3-15.9 8.4v.2l-3.5-8.2c-.6-3.3 7.2-7.5 17.6-9.2a43 43 0 0 1 9.2-.7c6.6 0 12.4.8 15.8 2.1v9.4"
+		/>
+
+		<path
+			fill="#ad1519"
+			d="M126.8 267.3c-4.3-.3-7.3-1.4-7.6-3.2-.3-1.5 1.2-3 3.8-4.5 1.2.1 2.5.3 3.8.3v7.4"
+		/>
+
+		<path
+			fill="#ad1519"
+			d="M142.5 261.5c2.7.4 4.7 1 5.7 1.9l.1.2c.5 1-1.9 3-5.9 5.4v-7.5"
+		/>
+
+		<path
+			fill="#ad1519"
+			d="M117.1 282c-.4-1.2 3.8-3.6 9.8-5.8l7.8-3.2c8.3-3.7 14.4-7.9 13.6-9.4v-.2c.4.4 1 8 1 8 .8 1.3-4.8 5.5-12.4 9.1-2.5 1.2-7.6 3-10 4-4.4 1.4-8.7 4.3-8.3 5.3l-1.5-7.7"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M267.2 223h21.4v-5.5h-21.4v5.6z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-linejoin="round"
+			stroke-width=".4"
+			d="M286.3 226.8a1 1 0 0 0-.4 0h-16.5c.6-.2 1-.7 1-1.2 0-.6-.4-1.1-1-1.3h17-.1c-.6.2-1 .7-1 1.3 0 .5.4 1 1 1.2z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M269.9 226.8h16c.6 0 1 .3 1 .7 0 .4-.4.8-1 .8h-16c-.6 0-1-.4-1-.8s.5-.8 1-.8z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M269.9 223h16c.6 0 1 .4 1 .7 0 .4-.4.6-1 .6h-16c-.6 0-1-.2-1-.6 0-.3.4-.6 1-.6z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-linejoin="round"
+			stroke-width=".4"
+			d="m286.3 308-.1.5c0 1.5 1.2 2.6 2.7 2.6h-22c1.5 0 2.7-1.2 2.7-2.6l-.1-.5h16.8z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M269.9 306.5h16c.6 0 1 .3 1 .8 0 .4-.4.7-1 .7h-16c-.6 0-1-.3-1-.8 0-.4.5-.7 1-.7z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M266.9 316.7h22V311h-22v5.6z"
+		/>
+		<path
+			fill="#ad1519"
+			d="M290.6 286.7c2.1 1.2 3.6 2.5 3.4 3.2-.1.6-.8 1-1.8 1.6-1.6 1.1-2.5 3-1.8 4a5.5 5.5 0 0 1 .2-8.8"
+		/>
+
+		<path fill="#ccc" d="M270.1 305.6h15.6V229h-15.6v76.5z" />
+
+		<path
+			fill="#ad1519"
+			d="M254.2 257.7a49.6 49.6 0 0 1 23.3-2c9.3 1.6 16.4 5.3 15.9 8.4v.2l3.5-8.2c.6-3.3-7.3-7.5-17.6-9.2a53.5 53.5 0 0 0-9.2-.7c-6.7 0-12.4.8-15.9 2.1v9.4"
+		/>
+
+		<path
+			fill="#ad1519"
+			d="M285.7 267.3c4.4-.3 7.3-1.4 7.7-3.2.2-1.5-1.2-3-3.8-4.5-1.2.1-2.5.3-3.9.3v7.4"
+		/>
+
+		<path
+			fill="#ad1519"
+			d="M270 261.5a13 13 0 0 0-5.7 1.9v.2c-.5 1 1.8 3 5.8 5.4v-7.5"
+		/>
+
+		<path
+			fill="#ad1519"
+			d="M295.4 282c.4-1.2-3.8-3.6-9.7-5.8-2.8-1-5-2-7.8-3.2-8.3-3.7-14.4-7.9-13.6-9.4v-.2c-.4.4-1 8-1 8-.8 1.3 4.8 5.5 12.4 9.1 2.4 1.2 7.6 3 10 4 4.3 1.4 8.7 4.3 8.3 5.3l1.4-7.7"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".1"
+			d="M182.2 192.4c0-1 1-2 2-2s2.2 1 2.2 2c0 1.1-1 2-2.1 2a2 2 0 0 1-2.1-2z"
+		/>
+		<path
+			fill="#ad1519"
+			stroke="#000"
+			stroke-width=".3"
+			d="M205.7 175.4c6.3 0 12 1 15.7 2.4a31.7 31.7 0 0 0 14.6 2.3c2.7 0 6.5.8 10.3 2.4a27.3 27.3 0 0 1 7.4 4.7l-1.5 1.4-.4 3.8-4.1 4.7-2 1.8-5 3.9-2.5.2-.7 2.1-31.6-3.7-31.7 3.7-.8-2.1-2.5-.2-4.9-4-2-1.7-4.1-4.7-.5-3.8-1.5-1.4a27.6 27.6 0 0 1 7.5-4.7 26 26 0 0 1 10.2-2.4c2 .2 4.2.1 6.6-.2a30 30 0 0 0 8-2c3.7-1.5 9-2.5 15.5-2.5z"
+		/>
+
+		<path
+			fill="#c8b100"
+			stroke="#000"
+			stroke-width=".4"
+			d="M206.1 201.9c-12.9 0-24.5 1.5-32.8 4a1 1 0 0 1-1.3-.6 1 1 0 0 1 .7-1.3 121 121 0 0 1 33.4-4.2c13.2 0 25.2 1.7 33.5 4.2.6.2.9.8.7 1.3-.2.5-.8.8-1.3.6-8.4-2.5-20-4-32.9-4"
+		/>
+
+		<path
+			fill="#c8b100"
+			d="m182.3 183.8 1.4 1 2-3.2a7.4 7.4 0 0 1-3.6-7.2c.2-4.1 5.2-7.6 11.7-7.6 3.3 0 6.3 1 8.5 2.4 0-.6 0-1.2.2-1.8a17.4 17.4 0 0 0-8.7-2.1c-7.4 0-13.2 4.1-13.5 9.1a8.9 8.9 0 0 0 3 7.6l-1 1.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="m182.3 183.8 1.4 1 2-3.2a7.4 7.4 0 0 1-3.6-7.2c.2-4.1 5.2-7.6 11.7-7.6 3.3 0 6.3 1 8.5 2.4 0-.6 0-1.2.2-1.8a17.4 17.4 0 0 0-8.7-2.1c-7.4 0-13.2 4.1-13.5 9.1a8.9 8.9 0 0 0 3 7.6l-1 1.8"
+		/>
+		<path
+			fill="#c8b100"
+			d="M182.4 183.8a9.3 9.3 0 0 1-4-7.3c0-3.2 2-6.1 5.3-8a8.5 8.5 0 0 0-3.4 6.8 8.9 8.9 0 0 0 3 6.7l-.9 1.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M182.4 183.8a9.3 9.3 0 0 1-4-7.3c0-3.2 2-6.1 5.3-8a8.5 8.5 0 0 0-3.4 6.8 8.9 8.9 0 0 0 3 6.7l-.9 1.8"
+		/>
+		<path
+			fill="#c8b100"
+			d="M160.1 187.1a8.8 8.8 0 0 1-2.3-5.9c0-1.3.3-2.6 1-3.8 2-4.2 8.4-7.2 16-7.2 2 0 4 .2 5.9.6l-1 1.4a25.5 25.5 0 0 0-4.9-.4c-7 0-12.8 2.7-14.5 6.3a7 7 0 0 0-.7 3.1 7.3 7.3 0 0 0 2.7 5.6l-2.6 4.1-1.3-1 1.7-2.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M160.1 187.1a8.8 8.8 0 0 1-2.3-5.9c0-1.3.3-2.6 1-3.8 2-4.2 8.4-7.2 16-7.2 2 0 4 .2 5.9.6l-1 1.4a25.5 25.5 0 0 0-4.9-.4c-7 0-12.8 2.7-14.5 6.3a7 7 0 0 0-.7 3.1 7.3 7.3 0 0 0 2.7 5.6l-2.6 4.1-1.3-1 1.7-2.8z"
+		/>
+		<path
+			fill="#c8b100"
+			d="M162.7 173.3a10.5 10.5 0 0 0-4 4.1 8.6 8.6 0 0 0-.9 3.8c0 2.3.9 4.3 2.3 5.9l-1.5 2.5a10.4 10.4 0 0 1-2.3-6.5c0-4 2.5-7.5 6.4-9.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M162.7 173.3a10.5 10.5 0 0 0-4 4.1 8.6 8.6 0 0 0-.9 3.8c0 2.3.9 4.3 2.3 5.9l-1.5 2.5a10.4 10.4 0 0 1-2.3-6.5c0-4 2.5-7.5 6.4-9.8z"
+		/>
+		<path
+			fill="#c8b100"
+			d="M206 164.4c1.7 0 3.2 1.1 3.5 2.6.3 1.4.4 2.9.4 4.5v1.1c.1 3.3.6 6.3 1.3 8.1l-5.2 5-5.2-5c.7-1.8 1.2-4.8 1.3-8.1v-1.1c0-1.6.2-3.1.4-4.5.3-1.5 1.8-2.6 3.5-2.6"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M206 164.4c1.7 0 3.2 1.1 3.5 2.6.3 1.4.4 2.9.4 4.5v1.1c.1 3.3.6 6.3 1.3 8.1l-5.2 5-5.2-5c.7-1.8 1.2-4.8 1.3-8.1v-1.1c0-1.6.2-3.1.4-4.5.3-1.5 1.8-2.6 3.5-2.6z"
+		/>
+		<path
+			fill="#c8b100"
+			d="M206 166c1 0 1.7.6 1.8 1.4.2 1.2.4 2.6.4 4.2v1c.1 3.2.6 6 1.2 7.7l-3.4 3.2-3.4-3.2c.7-1.7 1.1-4.5 1.2-7.7v-1a28.1 28.1 0 0 1 .4-4.2 2 2 0 0 1 1.8-1.4"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M206 166c1 0 1.7.6 1.8 1.4.2 1.2.4 2.6.4 4.2v1c.1 3.2.6 6 1.2 7.7l-3.4 3.2-3.4-3.2c.7-1.7 1.1-4.5 1.2-7.7v-1a28.1 28.1 0 0 1 .4-4.2 2 2 0 0 1 1.8-1.4z"
+		/>
+		<path
+			fill="#c8b100"
+			d="m229.7 183.8-1.3 1-2-3.2a7.4 7.4 0 0 0 3.6-6.3 7 7 0 0 0 0-.9c-.2-4.1-5.3-7.6-11.7-7.6a15 15 0 0 0-8.5 2.4 23 23 0 0 0-.2-1.8 17.4 17.4 0 0 1 8.7-2.1c7.4 0 13.2 4.1 13.4 9.1a8.9 8.9 0 0 1-3 7.6l1 1.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="m229.7 183.8-1.3 1-2-3.2a7.4 7.4 0 0 0 3.6-6.3 7 7 0 0 0 0-.9c-.2-4.1-5.3-7.6-11.7-7.6a15 15 0 0 0-8.5 2.4 23 23 0 0 0-.2-1.8 17.4 17.4 0 0 1 8.7-2.1c7.4 0 13.2 4.1 13.4 9.1a8.9 8.9 0 0 1-3 7.6l1 1.8"
+		/>
+		<path
+			fill="#c8b100"
+			d="M229.6 183.8a9.1 9.1 0 0 0 4.1-7.3c0-3.2-2.1-6.1-5.3-8a8.5 8.5 0 0 1 3.4 6.8 8.9 8.9 0 0 1-3.2 6.7l1 1.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M229.6 183.8a9.1 9.1 0 0 0 4.1-7.3c0-3.2-2.1-6.1-5.3-8a8.5 8.5 0 0 1 3.4 6.8 8.9 8.9 0 0 1-3.2 6.7l1 1.8"
+		/>
+		<path
+			fill="#c8b100"
+			d="M252 187.1a8.8 8.8 0 0 0 2.2-5.9 8.7 8.7 0 0 0-.9-3.8c-2-4.2-8.4-7.2-16-7.2a29 29 0 0 0-6 .6l1 1.4a25.4 25.4 0 0 1 5-.4c7 0 12.8 2.7 14.4 6.3.5 1 .7 2 .7 3.1a7.3 7.3 0 0 1-2.6 5.6l2.5 4.1 1.3-1-1.7-2.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M252 187.1a8.8 8.8 0 0 0 2.2-5.9 8.7 8.7 0 0 0-.9-3.8c-2-4.2-8.4-7.2-16-7.2a29 29 0 0 0-6 .6l1 1.4a25.4 25.4 0 0 1 5-.4c7 0 12.8 2.7 14.4 6.3.5 1 .7 2 .7 3.1a7.3 7.3 0 0 1-2.6 5.6l2.5 4.1 1.3-1-1.7-2.8z"
+		/>
+		<path
+			fill="#c8b100"
+			d="M249.3 173.3a10.6 10.6 0 0 1 4 4.1 8.7 8.7 0 0 1 .9 3.8 8.8 8.8 0 0 1-2.3 5.9l1.6 2.5a10.4 10.4 0 0 0 2.3-6.5c0-4-2.6-7.5-6.5-9.8"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".4"
+			d="M249.3 173.3a10.6 10.6 0 0 1 4 4.1 8.7 8.7 0 0 1 .9 3.8 8.8 8.8 0 0 1-2.3 5.9l1.6 2.5a10.4 10.4 0 0 0 2.3-6.5c0-4-2.6-7.5-6.5-9.8z"
+		/>
+
+		<path
+			fill="#ccc"
+			d="M206.5 330.6a82 82 0 0 1-35.5-8.2 22.7 22.7 0 0 1-12.8-20.4v-32h96.4v32a22.7 22.7 0 0 1-12.8 20.4 81 81 0 0 1-35.3 8.2"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".5"
+			d="M206.5 330.6a82 82 0 0 1-35.5-8.2 22.7 22.7 0 0 1-12.8-20.4v-32h96.4v32a22.7 22.7 0 0 1-12.8 20.4 81 81 0 0 1-35.3 8.2z"
+		/>
+		<path fill="#ccc" d="M206.3 270h48.3v-53.5h-48.3V270z" />
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".5"
+			d="M206.3 270h48.3v-53.5h-48.3V270z"
+		/>
+		<path
+			fill="#ad1519"
+			d="M206.3 302c0 12.6-10.7 22.9-24 22.9s-24.2-10.3-24.2-23v-32h48.2v32"
+		/>
+		<path
+			fill="#c8b100"
+			stroke="#000"
+			stroke-width=".5"
+			d="M168.6 320.9c1.5.8 3.6 2 5.8 2.6l-.1-54.7h-5.7v52z"
+		/>
+
+		<path
+			fill="#c7b500"
+			stroke="#000"
+			stroke-width=".5"
+			d="M179.4 324.7a26.6 26.6 0 0 0 5.6 0v-55.9h-5.6v56z"
+		/>
+		<path
+			fill="#c8b100"
+			stroke="#000"
+			stroke-width=".5"
+			d="M190 323.5a19 19 0 0 0 5.8-2.5v-52.2H190l-.1 54.7z"
+		/>
+		<path fill="#ad1519" d="M158.1 270h48.2v-53.5H158V270z" />
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".5"
+			d="M158.1 270h48.2v-53.5H158V270z"
+		/>
+
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".5"
+			d="M206.3 302c0 12.6-10.7 22.9-24 22.9s-24.2-10.3-24.2-23v-32h48.2v32"
+		/>
+		<path
+			fill="#ad1519"
+			d="M254.6 270v32c0 12.6-10.8 22.9-24.1 22.9s-24.2-10.3-24.2-23v-32h48.3"
+		/>
+		<path
+			fill="none"
+			stroke="#000"
+			stroke-width=".5"
+			d="M254.6 270v32c0 12.6-10.8 22.9-24.1 22.9s-24.2-10.3-24.2-23v-32h48.3"
+		/>
+	</svg>
+);
 //**********************PORTFOLIOHEADER**************************
 //---------Items del Menu principal. Seccion Portfolioheader-----
 const menuItemsES = [
@@ -924,6 +1277,28 @@ const footerMessageES = <>Sitio diseñado por Ander</>;
 //===============================================================
 //==========================ENGLISH==============================
 //===============================================================
+//********************Language flag******************************
+const languageSvgEN = (
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		id="flag-icons-gb"
+		viewBox="0 0 640 480"
+		height="16"
+		className="relative top-0.5"
+	>
+		<path fill="#012169" d="M0 0h640v480H0z" />
+		<path
+			fill="#FFF"
+			d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"
+		/>
+		<path
+			fill="#C8102E"
+			d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"
+		/>
+		<path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
+		<path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z" />
+	</svg>
+);
 //**********************PORTFOLIOHEADER**************************
 //---------Items del Menu principal. Seccion Portfolioheader-----
 const menuItemsEN = [
@@ -1803,42 +2178,50 @@ const footerMessageEN = <>Designed by Ander</>;
 let storedLanguage = window.localStorage.getItem("languageSelected");
 
 const dataGlobalObject = {
-	ES: [
-		portfolioDataES,
-		skillListES,
-		personalInfoES,
-		serviceCardListES,
-		slidesES,
-		contactInfoES,
-		menuItemsES,
-		welcomeMessageES,
-		footerMessageES,
-		welcomeButtonTextES,
-		serviceSectionTitleES,
-		portfolioSectionTitleES,
-		testimonialsSectionTitleES,
-		formTextInfoES,
-		contactsSectionTitleES,
-		modalTextInfoES,
-	],
-	EN: [
-		portfolioDataEN,
-		skillListEN,
-		personalInfoEN,
-		serviceCardListEN,
-		slidesEN,
-		contactInfoEN,
-		menuItemsEN,
-		welcomeMessageEN,
-		footerMessageEN,
-		welcomeButtonTextEN,
-		serviceSectionTitleEN,
-		portfolioSectionTitleEN,
-		testimonialsSectionTitleEN,
-		formTextInfoEN,
-		contactsSectionTitleEN,
-		modalTextInfoEN,
-	],
+	ES: {
+		arrayData: [
+			portfolioDataES,
+			skillListES,
+			personalInfoES,
+			serviceCardListES,
+			slidesES,
+			contactInfoES,
+			menuItemsES,
+			welcomeMessageES,
+			footerMessageES,
+			welcomeButtonTextES,
+			serviceSectionTitleES,
+			portfolioSectionTitleES,
+			testimonialsSectionTitleES,
+			formTextInfoES,
+			contactsSectionTitleES,
+			modalTextInfoES,
+		],
+		languageSvg: languageSvgES,
+		languageName: "Español",
+	},
+	EN: {
+		arrayData: [
+			portfolioDataEN,
+			skillListEN,
+			personalInfoEN,
+			serviceCardListEN,
+			slidesEN,
+			contactInfoEN,
+			menuItemsEN,
+			welcomeMessageEN,
+			footerMessageEN,
+			welcomeButtonTextEN,
+			serviceSectionTitleEN,
+			portfolioSectionTitleEN,
+			testimonialsSectionTitleEN,
+			formTextInfoEN,
+			contactsSectionTitleEN,
+			modalTextInfoEN,
+		],
+		languageSvg: languageSvgEN,
+		languageName: "English",
+	},
 };
 
 let [
@@ -1858,14 +2241,16 @@ let [
 	formTextInfo,
 	contactsSectionTitle,
 	modalTextInfo,
-] = storedLanguage ? dataGlobalObject[storedLanguage] : dataGlobalObject["ES"]; //default option ES
+] = storedLanguage
+	? dataGlobalObject[storedLanguage].arrayData
+	: dataGlobalObject["ES"].arrayData; //default option ES
 
 //***************************************************************
 
 const SelectLanguage = () => {
-	const [language, setLanguage] = useState(storedLanguage || "ES");
+	const [isLangSelectVisible, setIsLangSelectVisible] = useState(false);
 
-	useEffect(() => {
+	const languageSelect = (lang) => {
 		[
 			portfolioData,
 			skillList,
@@ -1883,41 +2268,40 @@ const SelectLanguage = () => {
 			formTextInfo,
 			contactsSectionTitle,
 			modalTextInfo,
-		] = dataGlobalObject[language];
-		window.localStorage.setItem("languageSelected", language);
-	}, [language]);
-
-	const changeSelect = (e) => {
-		setLanguage(e.target.value);
+		] = dataGlobalObject[lang].arrayData;
+		window.localStorage.setItem("languageSelected", lang);
 	};
 
 	return (
-		<div className="relative inline-flex">
-			<svg
-				className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 412 232"
+		<>
+			<button
+				className="border-none bg-first-color text-second-color font-bold hover:text-white hover:bg-first-alpha-color p-2 rounded cursor-pointer transition ease-out duration-700"
+				onClick={() => setIsLangSelectVisible(true)}
 			>
-				<path
-					d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
-					fill="#FF4C29FF"
-					fillRule="nonzero"
-				/>
-			</svg>
-			<select
-				value={language}
-				onChange={changeSelect}
-				name="language"
-				id="languageSelect"
-				className="border border-first-color rounded-full text-first-color h-10 pl-4 pr-10 bg-second-color hover:border-white focus:outline-none appearance-none cursor-pointer font-['Raleway'] font-bold"
-			>
-				{Object.entries(dataGlobalObject).map((el) => (
-					<option value={el[0]} className="font-bold" onClick={changeSelect}>
-						{el[0]}
-					</option>
-				))}
-			</select>
-		</div>
+				Select Language
+			</button>
+			{isLangSelectVisible && (
+				<div
+					className="fixed bg-black bg-opacity-50 bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center gap-1 z-50"
+					onClick={() => setIsLangSelectVisible(false)}
+				>
+					{Object.entries(dataGlobalObject).map((el) => (
+						<div
+							className="relative font-bold w-60 h-6 pl-6 py-0.5 bg-white-color hover:bg-opacity-70 rounded cursor-pointer"
+							onClick={() => languageSelect(el[0])}
+						>
+							{el[1].languageSvg}
+							<span className="">
+								{" "}
+								{el[0]}
+								{"............"}
+								{el[1].languageName}
+							</span>
+						</div>
+					))}
+				</div>
+			)}
+		</>
 	);
 };
 
