@@ -2282,12 +2282,12 @@ const SelectLanguage = () => {
 			</button>
 			{isLangSelectVisible && (
 				<div
-					className="fixed bg-black bg-opacity-50 bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center gap-1 z-50"
+					className="fixed bg-black bg-opacity-50 bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center gap-2 z-50"
 					onClick={() => setIsLangSelectVisible(false)}
 				>
 					{Object.entries(dataGlobalObject).map((el) => (
 						<div
-							className="relative font-bold w-60 h-6 pl-6 py-0.5 bg-white-color hover:bg-opacity-70 rounded cursor-pointer"
+							className="relative font-bold w-60 h-8 pl-6 py-1.5 bg-white-color hover:bg-opacity-70 rounded cursor-pointer"
 							onClick={() => languageSelect(el[0])}
 						>
 							{el[1].languageSvg}
