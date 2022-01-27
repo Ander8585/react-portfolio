@@ -12,7 +12,11 @@ import profilePic from "../assets/anderTorres-low.jpg";
 import customer5 from "../assets/customer-5.jpg";
 import customer6 from "../assets/customer-6.jpg";
 import customer7 from "../assets/customer-7.jpg";
+//----------CV en pdf en Español e Inglés. Seccion About---------
+import CVpdfES from "../assets/Curriculum-Ander-ES.pdf"
+import CVpdfEN from "../assets/Curriculum-Ander-EN.pdf"
 //---------------------------------------------------------------
+
 
 //*******************LOGO***Y****HEROIMAGE***********************
 //----------Funcion que genera el logo en svg. Cambiar el tag svg
@@ -2196,6 +2200,7 @@ const dataGlobalObject = {
 			formTextInfoES,
 			contactsSectionTitleES,
 			modalTextInfoES,
+			CVpdfES,
 		],
 		languageSvg: languageSvgES,
 		languageName: "Español",
@@ -2218,6 +2223,7 @@ const dataGlobalObject = {
 			formTextInfoEN,
 			contactsSectionTitleEN,
 			modalTextInfoEN,
+			CVpdfEN,
 		],
 		languageSvg: languageSvgEN,
 		languageName: "English",
@@ -2241,6 +2247,7 @@ let [
 	formTextInfo,
 	contactsSectionTitle,
 	modalTextInfo,
+	CVpdf,
 ] = storedLanguage
 	? dataGlobalObject[storedLanguage].arrayData
 	: dataGlobalObject["ES"].arrayData; //default option ES
@@ -2268,6 +2275,7 @@ const SelectLanguage = () => {
 			formTextInfo,
 			contactsSectionTitle,
 			modalTextInfo,
+			CVpdf
 		] = dataGlobalObject[lang].arrayData;
 		window.localStorage.setItem("languageSelected", lang);
 	};
@@ -2325,6 +2333,7 @@ export {
 	heroImageDataTestimonials,
 	heroImageDataHome,
 	logoSvg,
+	CVpdf,
 };
 
 export default SelectLanguage;

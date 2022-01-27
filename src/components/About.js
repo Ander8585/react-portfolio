@@ -1,5 +1,5 @@
 import React from "react";
-import { personalInfo, skillList } from "../data/dataInfo";
+import { personalInfo, skillList, CVpdf } from "../data/dataInfo";
 import LinkBtn from "./LinkBtn";
 import SkillBar from "./SkillBar";
 import "./About.css";
@@ -17,7 +17,9 @@ const About = () => {
 				</aside>
 				{personalInfo.details}
 				<div className="text-center lg:text-left">
-					<LinkBtn href="https://ander8585.github.io/react-portfolio">
+					<LinkBtn
+						href={CVpdf} /* "https://ander8585.github.io/react-portfolio/" */
+					>
 						{personalInfo.buttonCV}
 					</LinkBtn>
 				</div>
