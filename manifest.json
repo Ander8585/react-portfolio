@@ -13,8 +13,7 @@
 			"sizes": "512x512"
 		}
 	],
-	"scope": "/react-portfolio/",
-	"start_url": "/react-portfolio",
+	"start_url": "https://ander8585.github.io/react-portfolio",
 	"display": "standalone",
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
