@@ -3,22 +3,18 @@
 	"name": "Portfolio CV - Ander Torres",
 	"icons": [
 		{
-			"src": "favicon.png",
-			"sizes": "64x64 32x32 24x24 16x16",
-			"type": "image/png"
-		},
-		{
-			"src": "favicon.png",
+			"src": "portfolioPic192x192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "portfolio-pic.jpg",
-			"type": "image/jpg",
+			"src": "portfolioPic512x512.png",
+			"type": "image/png",
 			"sizes": "512x512"
 		}
 	],
-	"start_url": "https://ander8585.github.io/react-portfolio",
+	"scope": "/react-portfolio/",
+	"start_url": "/react-portfolio",
 	"display": "standalone",
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
