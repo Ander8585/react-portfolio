@@ -13,8 +13,7 @@
 			"sizes": "512x512"
 		}
 	],
-	"scope": "/",
-	"start_url": "/react-portfolio",
+	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#000000",
 	"background_color": "#ffffff",
